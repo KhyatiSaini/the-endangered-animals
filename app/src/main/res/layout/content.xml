@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <ImageView
+        android:id="@+id/imageView_resource"
+        android:layout_width="match_parent"
+        android:layout_height="200sp"
+        app:srcCompat="@drawable/gallery"
+        tools:ignore="VectorDrawableCompat"/>
+
+    <TextView
+        android:id="@+id/textView_Title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/imageView_resource"
+        android:layout_marginTop="10sp"
+        android:paddingLeft="30sp"
+        android:paddingRight="30sp"
+        android:text="TextView"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/textView_body"
+        android:layout_width="match_parent"
+        android:layout_height="100sp"
+        android:paddingTop="10sp"
+        android:paddingLeft="30sp"
+        android:paddingRight="30sp"
+        android:paddingBottom="40sp"
+        android:layout_below="@+id/textView_Title"
+        android:layout_marginTop="10sp"
+        android:text="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book." />
+
+    <ImageView
+        android:id="@+id/imageViewButton"
+        android:layout_width="58dp"
+        android:layout_height="39dp"
+        android:layout_alignBottom="@+id/textView_body"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginEnd="0dp"
+        android:layout_marginRight="0dp"
+        android:layout_marginBottom="1dp"
+        app:srcCompat="@drawable/arrow"
+        tools:ignore="VectorDrawableCompat" />
+
+</RelativeLayout>
