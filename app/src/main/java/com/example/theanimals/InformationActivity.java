@@ -2,6 +2,7 @@ package com.example.theanimals;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -11,7 +12,7 @@ import androidx.appcompat.app.AppCompatActivity;
 public class InformationActivity extends AppCompatActivity {
 
     TextView animalName, description;
-    ImageView animalImageView;
+    ImageView animalImageView, backButton;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -21,6 +22,7 @@ public class InformationActivity extends AppCompatActivity {
         animalName = findViewById(R.id.textViewName);
         description = findViewById(R.id.textViewBody);
         animalImageView = findViewById(R.id.imageViewAnimal);
+        backButton = findViewById(R.id.imageButtonBack);
 
         final Intent i = getIntent();
         if(i.getExtras() != null)
@@ -33,5 +35,12 @@ public class InformationActivity extends AppCompatActivity {
             description.setText(des);
             animalImageView.setImageResource(ImageUrl);
         }
+
+        backButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                InformationActivity.this.finish();
+            }
+        });
     }
 }
