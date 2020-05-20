@@ -1,24 +1,32 @@
 package com.example.theanimals;
 
+import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Filter;
+import android.widget.Filterable;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
 
 public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder> {
 
     private static List<Model> modelList;
+    private static Context context;
+    private static SelectedAnimal selected;
 
-    public Adapter(List modelList) {
+    public Adapter(List<Model> modelList, Context context, SelectedAnimal selected) {
         this.modelList = modelList;
+        this.context = context;
+        this.selected = selected;
     }
-
 
     @NonNull
     @Override
@@ -38,8 +46,22 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder> {
     }
 
     @Override
+    public long getItemId(int position) {
+        return position;
+    }
+
+    @Override
+    public int getItemViewType(int position) {
+        return position;
+    }
+
+    @Override
     public int getItemCount() {
         return modelList.size();
+    }
+
+    public interface SelectedAnimal{
+        void selected(Model model, Context context);
     }
 
     public static class ViewHolder extends RecyclerView.ViewHolder {
@@ -56,6 +78,13 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder> {
             title = itemView.findViewById(R.id.textView_Title);
             body = itemView.findViewById(R.id.textView_body);
             next = itemView.findViewById(R.id.imageViewButton);
+
+            next.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    selected.selected(modelList.get(getAdapterPosition()), context);
+                }
+            });
 
         }
 
