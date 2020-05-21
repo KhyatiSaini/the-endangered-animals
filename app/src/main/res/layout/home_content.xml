@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/circleImageView"
+        android:layout_margin="20sp"
+        android:layout_width="100sp"
+        android:layout_height="100sp"
+        android:src="@drawable/orangutan"/>
+
+    <TextView
+        android:id="@+id/textViewNameHome"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="150sp"
+        android:textColor="@color/design_default_color_secondary_variant"
+        android:padding="10sp"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:layout_marginTop="25sp"
+        android:text="TextView" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="76sp"
+        android:layout_marginRight="20sp"
+        android:padding="10sp"
+        app:srcCompat="@drawable/arrow"
+        tools:ignore="VectorDrawableCompat" />
+
+</RelativeLayout>
