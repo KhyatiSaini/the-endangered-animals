@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">TheAnimals</string>
+    <string name="back" />
+    <string name="animalName" />
 </resources>
