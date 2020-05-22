@@ -63,10 +63,11 @@ public class Home_Fragment extends Fragment implements Home_Adapter.SelectedAnim
 
 
     @Override
-    public void selectedAnimalHome(Home_Model homeModel, Context context) {
+    public void selectedAnimalHome(Home_Model homeModel, Context context, int position) {
         Intent intent = new Intent(getContext(), InformationActivity.class);
         intent.putExtra("ImageURL", homeModel.getAnimalImageResource());
         intent.putExtra("AnimalName", homeModel.getNameOfAnimal());
         startActivity(intent);
     }
+
 }

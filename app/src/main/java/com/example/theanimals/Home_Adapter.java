@@ -56,7 +56,7 @@ public class Home_Adapter extends RecyclerView.Adapter<Home_Adapter.ViewHolder>{
     }
 
     public interface SelectedAnimalHome{
-        void selectedAnimalHome(Home_Model homeModel, Context context);
+        void selectedAnimalHome(Home_Model homeModel, Context context, int position);
     }
 
     public static class ViewHolder extends RecyclerView.ViewHolder {
@@ -75,7 +75,7 @@ public class Home_Adapter extends RecyclerView.Adapter<Home_Adapter.ViewHolder>{
             next.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    selectedAnimalHome.selectedAnimalHome(homeModelList.get(getAdapterPosition()), context);
+                    selectedAnimalHome.selectedAnimalHome(homeModelList.get(getAdapterPosition()), context, getAdapterPosition());
                 }
             });
         }
