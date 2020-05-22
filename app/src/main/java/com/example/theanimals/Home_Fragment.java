@@ -65,13 +65,14 @@ public class Home_Fragment extends Fragment implements Home_Adapter.SelectedAnim
 
     @Override
     public void selectedAnimalHome(Home_Model homeModel, Context context, int position) {
-        Intent intent1 = new Intent(getContext(), InfoActivity.class);
-        intent1.putExtra("ImageURL", homeModel.getAnimalImageResource());
-        intent1.putExtra("AnimalName", homeModel.getNameOfAnimal());
-        intent1.putExtra("AnimalInfo", info[position]);
-        intent1.putExtra("AnimalStatus", status[position]);
+        Intent intent = new Intent(getContext(), InfoActivity.class);
+        intent.putExtra("ImageURL", homeModel.getAnimalImageResource());
+        intent.putExtra("AnimalName", homeModel.getNameOfAnimal());
+        intent.putExtra("AnimalInfo", info[position]);
+        intent.putExtra("AnimalStatus", status[position]);
+        intent.putExtra("AnimalOtherInfo", otherInfo[position]);
         Log.e("inside SAH", "info : " + String.valueOf(info.length));
-        startActivity(intent1);
+        startActivity(intent);
     }
 
     String[] info = {"People usually think of leopards in the savannas of Africa but in the Russian Far East, a rare subspecies has adapted to life in the temperate forests that make up the northern-most part of the species’ range. Similar to other leopards, the Amur leopard can run at speeds of up to 37 miles per hour. This incredible animal has been reported to leap more than 19 feet horizontally and up to 10 feet vertically.\n" +
@@ -312,5 +313,219 @@ public class Home_Fragment extends Fragment implements Home_Adapter.SelectedAnim
                     "6.2 feet\n" +
                     "HABITATS\n" +
                     "Lakes & Rivers"};
+
+    String[] otherInfo = {"Why they matter?\n" +
+                    "The Amur leopard is important ecologically, economically and culturally. Conservation of its habitat benefits other species, including Amur tigers and prey species like deer. With the right conservation efforts, we can bring them back and ensure long-term conservation of the region.\n" +
+                    "\n" +
+                    "THREATS\n" +
+                    "\n" +
+                    "ILLEGAL WILDLIFE TRADE\n" +
+                    "The Amur leopard is poached largely for its beautiful, spotted fur. In 1999, an undercover investigation team recovered a female and a male Amur leopard skin, which were being sold for $500 and $1,000 respectively in the village of Barabash, not far from the Kedrovaya Pad reserve in Russia. Agriculture and villages surround the forests where the leopards live. As a result the forests are relatively accessible, making poaching a problem—not only for the leopards themselves, but also for important prey species, such as roe deer, sika deer and hare, which are hunted by the villagers both for food and cash.\n" +
+                    "\n" +
+                    "PREY SCARCITY\n" +
+                    "There are still large tracts of suitable habitat left across the Amur in Russia and China. In China the prey base is insufficient to sustain large populations of leopards and tigers. Prey populations will recover if measures are taken to limit the poaching of prey species and the forests are managed for logging more sustainably. For the Amur leopard to survive for the long term, it needs to repopulate its former range. But for that to happen, prey populations need to recover first.\n",
+                    "Why they matter?\n" +
+                    "Rhinos are one of the oldest groups of mammals, virtually living fossils. They play an important role in their habitats and in countries like Namibia, rhinos are an important source of income from ecotourism. The protection of black rhinos creates large blocks of land for conservation purposes. This benefits many other species, including elephants.\n" +
+                    "\n" +
+                    "THREATS\n" +
+                    "\n" +
+                    "ILLEGAL WILDLIFE TRADE\n" +
+                    "Of all the threats facing black rhinos, poaching is the deadliest. Black rhinos have two horns which make them lucrative targets for the illegal trade in rhino horn A wave of poaching for rhino horn rippled through Kenya and Tanzania, continued south through Zambia's Luangwa Valley as far as the Zambezi River, and spread into Zimbabwe. Political instability and wars have greatly hampered rhino conservation work in Africa, notably in Angola, Rwanda, Somalia, and Sudan. This situation has exacerbated threats such as trade in rhino horn and increased poaching due to poverty.\n" +
+                    "\n" +
+                    "Today, black rhinos remain critically endangered because of rising demand for rhino horn, from some Asian consumers, particularly in Vietnam and China, who use them in folk remedies. A recent increase in poaching in South Africa threatens to erase our conservation success, reaching an apex in 2014 when 1,215 rhinos were poached. Poaching numbers are slowly decreasing—1,054 were poached in 2016—but poaching continues unabated with numbers remaining unsustainably high.\n" +
+                    "\n" +
+                    "POPULATION DENSITY, DISEASE, AND INBREEDING\n" +
+                    "High population density in some sites leads to lower breeding rates and increases the probability of disease transmission. Smaller, isolated populations can also be prone to genetic impacts from inbreeding.\n" +
+                    "\n" +
+                    "HABITAT LOSS AND FRAGMENTATION\n" +
+                    "Next to poaching, loss of habitat contributes to declines in rhino population. Human activities such as agriculture, settlements, and infrastructure development result in the loss and fragmentation of rhino habitat, which increases the risk of poaching and inbreeding.\n",
+                    "Why they matter?\n" + "Orangutans play a critical role in seed dispersal, keeping forests healthy. Over 500 plant species have been recorded in their diet.\n" +
+                            "\n" +
+                            "THREATS\n" +
+                            "\n" +
+                            "Orangutan numbers and distribution have declined rapidly since the middle of the 20th century, due to human activities. These include hunting, unsustainable and often illegal logging, mining, and conversion of forests to agriculture. One particularly catastrophic event was the 1997-98 forest fires in Kalimantan, which killed up to 8,000 individual orangutans.\n" +
+                            "\n" +
+                            "ILLEGAL WILDLIFE TRADE\n" +
+                            "Young orangutans are in demand for a flourishing pet trade, with each animal fetching several hundred dollars in city markets on nearby islands. Studies have indicated that 200-500 orangutans from Indonesian Borneo alone enter the pet trade each year. This represents a real threat to wild orangutan populations as orangutans have an extremely low reproductive rate. There is also trade in orangutan parts in Kalimantan, with orangutan skulls fetching up to $70 in towns\n" +
+                            "\n" +
+                            "CONFLICT WITH HUMANS\n" +
+                            "Orangutans are sometimes shot in retaliation when they move into agricultural areas, such as oil palm plantations, and destroy crops. This occurs particularly in times of hardship when orangutans can’t find the food they need in the forest.\n",
+                    "THREATS\n" +
+                            "\n" +
+                            "HUNTING\n" +
+                            "The hunting and killing of gorillas is illegal in Cameroon and Nigeria, but enforcement of wildlife laws is often lax. Following conservation efforts, hunting has declined to a low level, but any amount of gorilla killing will have a significantly impact an already small population.\n" +
+                            "\n" +
+                            "INBREEDING\n" +
+                            "The population risks inbreeding and a loss of genetic diversity because there are so few Cross River gorillas and they live in groups that interact infrequently if at all.\n",
+                    "Why they matter?\n" +
+                            "\n" +
+                            "A QUICKLY DISAPPEARING SUBSPECIES\n" +
+                            "The eastern lowland gorilla’s range has declined by at least a quarter over the last 50 years. The last census, in the mid-1990s, estimated that there were only 16,900 of the animals left in the wild, but following more than a decade of habitat destruction and fragmentation and years of civil unrest, the eastern lowland gorilla’s population may have declined by half or more.\n" +
+                            "\n" +
+                            "THREATS\n" +
+                            "\n" +
+                            "HABITAT LOSS AND FRAGMENTATION\n" +
+                            "As humans have moved from high-density regions in the East into the gorilla’s territory, they have destroyed and fragmented much of the animal’s forest habitat to make room for farming and livestock. Only a small portion of the gorilla’s range lies in protected areas such as Kahuzi-Biega National Park. But even there, park rangers often find it difficult to patrol the borders and protect the gorillas.\n" +
+                            "\n" +
+                            "MINING\n" +
+                            "Illegal mining for tin, gold, diamond and, especially, coltan—an alloy used in cell phones—is widespread throughout the eastern lowland gorilla’s range. This mining has helped to fuel the civil unrest in the region and attracted migrants who hunt the animals for bushmeat, medicine and the capture and trade of infant gorillas.\n" +
+                            "\n" +
+                            "CIVIL UNREST\n" +
+                            "Years of political instability and conflict have left the Congolese network of national parks in a state of neglect. Humans have been able to encroach upon Kahuzi-Biega National Park to hunt gorillas and to set up illegal mines. In addition, military activity and the presence of heavy weaponry have contributed to unrest in the region that has made conservation efforts difficult.\n",
+                    "Why they matter?\n" +
+                            "\n" +
+                            "Hawksbills help maintain the health of coral reefs. As they remove prey such as sponges from the reef's surface, they provide better access for reef fish to feed.  They also have cultural significance and tourism value.  For example, for local residents in the Coral Triangle, the flow of visitors who come to admire turtles is a vital source of income.\n" +
+                            "\n" +
+                            "THREATS\n" +
+                            "\n" +
+                            "Like other sea turtles, hawksbills are threatened by the loss of nesting and feeding habitats, excessive egg collection, fishery-related mortality, pollution, and coastal development. However, they are most threatened by wildlife trade.\n" +
+                            "\n" +
+                            "ILLEGAL WILDLIFE TRADE\n" +
+                            "\n" +
+                            "Turtle shell\n" +
+                            "The shell trade for tourists is a serious threat to Madagascar's marine resources.\n" +
+                            "\n" +
+                            "Despite their current protection under the Convention on International Trade in Endangered Species of Wild Fauna and Flora (CITES) and many national laws, there is still a disturbingly large amount of illegal trade in hawksbill shells and products. They are much sought after throughout the tropics for their beautiful brown and yellow carapace plates that are manufactured into tortoiseshell items for jewelry and ornaments. In recent decades, eastern Asia has provided an eager market for tortoiseshell.\n" +
+                            "\n" +
+                            "FISHERIES BYCATCH\n" +
+                            "Hawksbills are particularly susceptible to entanglement in gillnets and accidental capture on fishing hooks. Sea turtles need to reach the surface to breathe, and therefore many drown once caught. Known as bycatch, this is a serious threat to hawksbill turtles. As fishing activity expands, this threat is more of a problem.\n",
+                    "Why they matter?\n" +
+                            "\n" +
+                            "The population in Ujung Kulon National Park represents the only hope for the survival of a species that is on the brink of extinction. Until the late 19th century and early 20th century, Javan rhinos existed from northeast India and the Sunderbans , throughout mainland Southeast Asia, and on the island of Sumatra. If we lose the population in Java, the entire species will disappear.\n" +
+                            "\n" +
+                            "THREATS\n" +
+                            "\n" +
+                            "Javan rhinos are found in only one protected area in the world. The biology of the species is poorly understood, but we are starting to learn more about the species ecology and behavior thanks to very intensive monitoring of the population. They are extremely vulnerable to extinction due to natural catastrophes, habitat loss, diseases, poaching, and potential inbreeding.\n" +
+                            "\n" +
+                            "REDUCED GENETIC DIVERSITY\n" +
+                            "The small size of the Javan rhino population is a cause for concern. Low genetic diversity and inbreeding could make it difficult for the long-term survival of the species.\n" +
+                            "\n" +
+                            "NATURAL DISASTERS\n" +
+                            "The coastal Ujung Kulon National Park is highly vulnerable to tsunamis, and a major explosion of the nearby Anak Krakatau volcano could easily wipe out most life in the protected area. Rising sea levels because of climate change also threaten the park.\n" +
+                            "\n" +
+                            "ARENGA PALM\n" +
+                            "The Arenga palm has overtaken parts of the park, reducing natural forage and habitat quality.\n" +
+                            "\n" +
+                            "DISEASE\n" +
+                            "In recent years four rhinos, including one young adult female, are thought to have died from disease, probably transmitted to wild cattle in the park and subsequently to the rhinos.\n" +
+                            "\n" +
+                            "HABITAT DEGRADATION\n" +
+                            "People living near the park are encroaching on and degrading crucial rhino habitat. Important economic development near the park, including from (eco)tourism, risks further encroachment into the park.\n" +
+                            "\n" +
+                            "ILLEGAL WILDLIFE TRADE\n" +
+                            "Javan rhinos were killed by trophy hunters during colonial times. They were also killed as agricultural pests and for their horn, a highly prized commodity in traditional Asian medicine. Poaching remains an ever-present threat\n",
+                    "Why they matter?\n" +
+                            "\n" +
+                            "Orangutans are \"gardeners\" of the forest, playing a vital role in seed dispersal in their habitats. They live in tropical forests and prefer forest in river valleys and floodplains of their respective islands. Orangutans' extremely low reproductive rate makes their populations highly vulnerable. Females give birth to one infant at a time about every 3-5 years, so these species can take a long time to recover from population declines. With human pressure only increasing, orangutans face an increasing risk of extinction.\n" +
+                            "\n" +
+                            "THREATS\n" +
+                            "\n" +
+                            "HUNTING AND ILLEGAL WILDLIFE TRADE\n" +
+                            "Orangutans are an easy target for hunters because they're large and slow targets. They are killed for food or in retaliation when they move into agricultural areas and destroy crops. This usually occurs when orangutans can't find the food they need in the forest.\n" +
+                            "\n" +
+                            "Females are hunted most often. When caught with offspring, the young are often kept as pets. The pet trade is a major problem. It is thought that for each orangutan reaching Taiwan, as many as 3-5 additional animals die in the process. Recent enforcement of the law in Taiwan has reduced the importation of orangutans, but the trade remains a threat in Indonesia where there is still demand for orangutans as pets. There is also trade in orangutan skulls in Kalimantan (Indonesian Borneo)\n" +
+                            "\n" +
+                            "DEFORESTATION AND HABITAT LOSS\n" +
+                            "The habitats of Asia's only great apes are fast disappearing under the chainsaw to make way for oil palm plantations and other agricultural plantations. Illegal logging inside protected areas and unsustainable logging in concessions where orangutans live remains a major threat to their survival. Today, more than 50% of orangutans are found outside protected areas in forests under management by timber, palm oil and mining companies\n",
+                    "Why they matter?\n" +
+                            "\n" +
+                            "The actual size of the remaining population is unknown. Its rarity, distinctiveness and vulnerability make it one of the greatest priorities for conservation in the region. The current population is thought to be a few hundred at a maximum and possibly only a few dozen at a minimum. \n" +
+                            "\n" +
+                            "THREATS\n" +
+                            "\n" +
+                            "With its unusually long horns and white markings on the face, the saola is a strong symbol for biodiversity in Lao and Vietnam.\n" +
+                            "\n" +
+                            "HABITAT LOSS\n" +
+                            "As forests disappear under the chainsaw to make way for agriculture, plantations and infrastructure, saola are being squeezed into smaller spaces. The added pressure from rapid and large-scale infrastructure in the region is also fragmenting saola habitat. Conservationists are concerned that this is allowing hunters easy access to the once untouched forest of the saola and may reduce genetic diversity in the future.\n" +
+                            "\n" +
+                            "HUNTING\n" +
+                            "Saola are often caught in snares set in the forest for wild boar, sambar or muntjac deer. Local villagers set some snares for subsistence use and crop protection. Recent increases in lowland people hunting to supply the illegal trade in wildlife has led to a massive increase in hunting, driven by traditional medicine demand in China and restaurant and food markets in Vietnam and Laos.\n",
+                    "Why they matter?\n" +
+                            "\n" +
+                            "Sumatran elephants feed on a variety of plants and deposit seeds wherever they go, contributing to a healthy forest ecosystem.\n" +
+                            "\n" +
+                            "THREATS\n" +
+                            "\n" +
+                            "DEFORESTATION AND HABITAT LOSS\n" +
+                            "In 2012, the Sumatran elephant was changed from “Endangered” to “Critically Endangered” because half of its population has been lost in one generation—a decline that is largely due to habitat loss and as a result human-elephant conflict. Sumatra has experienced one of the highest rates of deforestation within the Asian elephant’s range, which has resulted in local extinctions of elephants in many areas. Over two-thirds of its natural lowland forest has been razed in the past 25 years and nearly 70 percent of the Sumatran elephant’s habitat has been destroyed in one generation.\n" +
+                            "\n" +
+                            "In Sumatra’s Riau province, pulp and paper industries and oil palm plantations have caused some of the world’s most rapid rates of deforestation. Elephant numbers have declined by a staggering 80 percent in less than 25 years, confining some herds to small forest patches. These populations are not likely to survive in the long-term. The Lampung province has seen its number of elephant herds decline from twelve in the 1980s to only three by 2002. Just two of the remaining herds are considered biologically viable.\n" +
+                            "\n" +
+                            "HUMAN-ELEPHANT CONFLICT\n" +
+                            "As a result of the rapid development and deforestation in Sumatra, elephants often come into contact with human settlements. They raid crops, trample homes and sometimes even hurt or kill people. Those affected sometimes retaliate and poison or shoot elephants.\n" +
+                            "\n" +
+                            "POACHING\n" +
+                            "Sumatran elephants typically have smaller tusks but they are enough to tempt poachers who kill the animals and sell their tusks on the illegal ivory market. Only male Asian elephants have tusks so every poaching event further skews the sex ratio further constraining breeding rates for the species.\n",
+                    "Why they matter?\n" +
+                            "\n" +
+                            "Orangutans are frugivores and play a vital role in the dispersal of seeds over a huge area. If orangutans were to disappear, so would several tree species, especially those with larger seeds.\n" +
+                            "\n" +
+                            "The tropical rainforests where Sumatran orangutans live are also home to other spectacular species including rare Sumatran tigers, Sumatran elephants, and Sumatran rhinoceroses.\n" +
+                            "\n" +
+                            "The forests orangutans call home are a vital source for fresh water. Rivers and streams from these forests provide local communities with water for drinking, cooking, bathing, irrigation and hydroelectricity. The forests are also a valuable source for wildlife products like honey and rattan\n" +
+                            "\n" +
+                            "THREATS\n" +
+                            "\n" +
+                            "HABITAT LOSS\n" +
+                            "Orangutan habitat in north Sumatra is being lost at an extremely high rate, mainly due to fire and conversion of forests to oil palm plantations and other agricultural development. This species depends on high-quality forests. Widespread forest fires, many set deliberately to clear land for plantations, are becoming a regular disaster. Not only do fires destroy vast areas of orangutan habitat, but thousands of these slow-moving apes are thought to have burned to death, unable to escape the flames.\n" +
+                            "\n" +
+                            "A plan to build a major road in northern Sumatra threatens one of the largest-remaining areas of the orangutan’s habitat. Not only will the road fragment the forest, but it will also open up access for illegal logging activities and human settlements. The project is progressing despite proof that conserving the region will help long-term sustainable development.\n" +
+                            "\n" +
+                            "HUNTING\n" +
+                            "Despite legal protection in Indonesia since 1931, orangutans are still captured from the wild and kept in households as status symbols. In some areas orangutans are hunted for food. Investigations by TRAFFIC, the global wildlife monitoring network, shows that lack of law enforcement against this illegal trafficking poses a serious threat to orangutans. Females give birth to just one infant at a time every eight or nine years, making their populations very susceptible to even very low levels of hunting. Experts estimate that even as little as 1% of females lost each year through hunting or other unnatural causes could put a population on an irreversible trajectory to extinction.\n",
+                    "Why they matter?\n" +
+                            "\n" +
+                            "In all rhino conservation areas, there are other valuable plants and animals. Protecting rhinos helps maintain other animal and plant life in the area and keeps ecosystems healthy.\n" +
+                            "\n" +
+                            "THREATS\n" +
+                            "\n" +
+                            "Growing consumer demand for rhino horn has driven the unsustainable increase in poaching across Africa and Asia. Rhino horn is coveted in parts of Asia for its purported medicinal qualities and as an ornament, often carved, which connotes social status and prestige.\n" +
+                            "\n" +
+                            "China and Vietnam are the two largest consumer markets for rhino horn. Demand in China began escalating in the 1990s in tandem with booming economic growth. Investigations by TRAFFIC, the world’s largest wildlife trade monitoring network, and WWF reveal that use of rhino horn in traditional medicine persists in many countries.\n" +
+                            "\n" +
+                            "HABITAT LOSS\n" +
+                            "Sumatran rhino habitat is being lost or degraded by invasive species, road construction, and encroachment for agricultural expansion. For example, Bukit Barisan Selatan National Park in Sumatra is losing forest cover due to conversion for coffee and rice by illegal settlers.\n" +
+                            "\n" +
+                            "LACK OF PROTECTION\n" +
+                            "Protection is insufficient in existing protected areas. When rhinos move outside of protected areas, communities are not sufficiently engaged or incentivized to protect them.\n" +
+                            "\n" +
+                            "SMALL POPULATION SIZE AND ISOLATION\n" +
+                            "Due to small numbers, low probability of breeding pairs encountering one other, and reproductive problems among aging females, we believe breeding among wild Sumatran rhinos to be minimal in most locations. Most—if not all—of the remaining sub-populations are too small to be viable long-term breeding populations.\n",
+                    "Why they matter?\n" +
+                            "\n" +
+                            "The island of Sumatra is the only place where tigers, rhinos, orangutans, and elephants live together in the wild. The presence of the Sunda tiger is an important indicator of a forest's health and biodiversity. Protecting tigers and their habitat means many other species benefit—including people.\n" +
+                            "\n" +
+                            "THREATS\n" +
+                            "\n" +
+                            "ILLEGAL WILDLIFE TRADE\n" +
+                            "Most tigers in Sumatra are killed deliberately for commercial gain. According to a survey from TRAFFIC, the global wildlife trade monitoring network, poaching for trade is responsible for almost 80% of estimated Sumatran tiger deaths—amounting to at least 40 animals per year.\n" +
+                            "\n" +
+                            "Despite intensified conservation and protection measures in parts of Sumatra and some success in curtailing markets for tiger bone, there is little evidence that tiger poaching has declined significantly on the island since the early 1990s.\n" +
+                            "\n" +
+                            "HUMAN-WILDLIFE CONFLICT\n" +
+                            "Dispersal of tigers in search of their territory and habitat destruction forces tigers out of protected areas and into human-occupied spaces— where they are more likely to come into conflict with people. Like other parts of the tiger’s range, human-tiger conflict is a serious problem in Sumatra. People have been killed or wounded, and livestock falls prey to tigers. Retaliatory action by villagers can result in the killing of tigers.\n" +
+                            "\n" +
+                            "HABITAT LOSS\n" +
+                            "Habitat for the Sumatran tiger has been drastically reduced by clearing for agriculture (particularly oil palm), plantations, and settlement. On many parts of the island, illegal timber harvesting, and forest conversion are out of control. Between 1985 and 2014, the island’s forest cover plunged from 58% to 26%. Even protected areas face problems. In addition, forest conversion has isolated national parks from one another, along with populations of species like tigers that need large areas for breeding, feeding, and dispersing.\n",
+                    "Why they matter?\n" +
+                            "\n" +
+                            "The vaquita is the most endangered cetacean in the world. With as few as around 10 left, the species will become extinct without a fully enforced gillnet ban throughout their entire habitat. WWF is urgently working to ensure they can live and thrive in their natural habitat.\n" +
+                            "\n" +
+                            "THREATS\n" +
+                            "\n" +
+                            "The vaquita will be extinct if fishery bycatch is not eliminated immediately. Nearly one out of every five vaquita get entangled and drown in gillnets intended for other marine species like the totoaba, a critically endangered fish also found in the upper Gulf of California. Entanglement in gillnets set for totoaba was the primary cause that brought the vaquita to low levels by the mid-1970s. Totoaba were overfished by the mid-1970s and were listed as endangered by Mexico in 1975, and by the US in 1979.\n" +
+                            "\n" +
+                            "Today, international trade in totoaba is banned under CITES, a global agreement among governments to regulate or ban international trade in species under threat, but high demand from China for its swim bladder has led to a boom in illegal totoaba fishing in the past few years. Demand for totoaba swim bladders has been driven by the belief in Chinese medicine that they are a cure to a variety of illness and diseases. Thousands of swim bladders are dried and smuggled out of Mexico, often through the United States. Fishermen receive around $4,000 for each pound of totoaba swim bladder, equivalent to half a year's income from legal fishing activities. It is this illegal trade that is currently driving the sharp decline in vaquita numbers.\n",
+                    "THREATS\n" +
+                            "\n" +
+                            "DISEASE\n" +
+                            "\n" +
+                            "Central Africa is home to not only gorillas, but also the deadly Ebola virus. Ebola has caused a number of massive gorilla and chimpanzee die-offs in the remote forests at the heart of the primates’ ranges. Some scientists estimate that it has killed about one third of the wild gorilla population, mostly western lowland gorillas. The toll has been even greater in some areas, such as the Minkébé Forest—once considered one of the most important populations—where the virus may have killed more than 90% of the region’s gorillas and chimpanzees.\n" +
+                            "\n" +
+                            "POACHING\n" +
+                            "The hunting and killing of gorillas is illegal but still the animals are killed for bushmeat or during the capture of baby gorillas for pets. In Northeast Congo, about 5% of western lowland gorillas in that region are killed each year. Timber and other companies have opened areas of once remote forest, facilitating poaching and the bushmeat trade. Poaching also carries dangers for humans as it is thought that Ebola may be spread through the butchering and handling of gorilla and other primate meat.\n",
+                    "THREATS\n" +
+                            "\n" +
+                            "Finless porpoises need an abundant food supply for survival. The destruction of the Baiji dolphin food supply was central to its extinction. Overfishing is the main factor that contributes to the decrease in finless porpoises’ food supply, but pollution and ship movement are factors as well."};
 
 }

@@ -11,7 +11,7 @@ import android.widget.TextView;
 
 public class InfoActivity extends AppCompatActivity {
 
-    TextView nameTextView, infoTextView, statusTextView;
+    TextView nameTextView, infoTextView, statusTextView, otherTextView;
     ImageView imageView, back;
 
     @Override
@@ -22,20 +22,23 @@ public class InfoActivity extends AppCompatActivity {
         nameTextView = findViewById(R.id.textView_nameHome);
         infoTextView = findViewById(R.id.textViewInfo);
         statusTextView = findViewById(R.id.textViewStatus);
+        otherTextView = findViewById(R.id.textViewWhyTheyMatter);
         imageView = findViewById(R.id.imageViewHome);
         back = findViewById(R.id.ButtonBack);
 
-        final Intent i1 = getIntent();
-        if(i1.getExtras() != null)
+        final Intent i = getIntent();
+        if(i.getExtras() != null)
         {
-            int urlImage = i1.getIntExtra("ImageURL", R.drawable.home);
-            String animalN = i1.getStringExtra("AnimalName");
-            String animal_info = i1.getStringExtra("AnimalInfo");
-            String status = i1.getStringExtra("AnimalStatus");
+            int urlImage = i.getIntExtra("ImageURL", R.drawable.home);
+            String animalN = i.getStringExtra("AnimalName");
+            String animal_info = i.getStringExtra("AnimalInfo");
+            String status = i.getStringExtra("AnimalStatus");
+            String other = i.getStringExtra("AnimalOtherInfo");
 
             nameTextView.setText(animalN);
             imageView.setImageResource(urlImage);
             infoTextView.setText(animal_info);
+            otherTextView.setText(other);
             statusTextView.setText(status);
         }
 
