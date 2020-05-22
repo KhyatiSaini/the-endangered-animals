@@ -87,13 +87,26 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/textViewStatus"
-            android:layout_margin="20sp"
+            android:layout_marginTop="20sp"
+            android:layout_marginLeft="20sp"
+            android:layout_marginRight="20sp"
             android:textColor="#ffffff"
             android:background="#00BCD4"
             android:padding="20sp"
             android:textSize="15sp"
             android:text="TextView" />
 
+        <TextView
+            android:id="@+id/textViewEfforts"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/textViewWhyTheyMatter"
+            android:layout_margin="20sp"
+            android:textColor="#ffffff"
+            android:background="#E91E63"
+            android:padding="20sp"
+            android:textSize="15sp"
+            android:text="TextView" />
 
     </RelativeLayout>
 

@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#ffffff">
@@ -15,7 +17,7 @@
         android:textAlignment="center"
         android:textColor="#ffffff"
         android:background="@color/design_default_color_error"
-        android:text="Endangered Animals"
+        android:text="Critically Endangered Animals"
         android:layout_gravity="center_horizontal" />
 
     <androidx.recyclerview.widget.RecyclerView
@@ -23,5 +25,13 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_below="@+id/textView"/>
+
+    <ImageView
+        android:id="@+id/back"
+        android:layout_width="45sp"
+        android:padding="10sp"
+        android:layout_height="45sp"
+        app:srcCompat="@drawable/back"
+        tools:ignore="VectorDrawableCompat" />
 
 </RelativeLayout>

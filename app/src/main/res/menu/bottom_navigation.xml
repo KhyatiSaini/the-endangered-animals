@@ -8,7 +8,7 @@
 
     <item
         android:id="@+id/nav_facts"
-        android:title="FACTS AND IMAGES"
+        android:title="FACTS"
         android:icon="@drawable/gallery"/>
 
     <item

@@ -9,6 +9,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.MenuItem;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import java.util.ArrayList;
@@ -82,6 +83,7 @@ public class HomeActivity extends AppCompatActivity implements Adapter.SelectedA
         intent.putExtra("ImageURL", model.getImageResource());
         intent.putExtra("AnimalName", model.getAnimalName());
         intent.putExtra("AnimalInfo", model.getInfo());
+        Log.e("HomeActivity", "selected animal: " + model.getAnimalName());
         startActivity(intent);
     }
 }

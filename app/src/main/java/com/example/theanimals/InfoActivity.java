@@ -11,7 +11,7 @@ import android.widget.TextView;
 
 public class InfoActivity extends AppCompatActivity {
 
-    TextView nameTextView, infoTextView, statusTextView, otherTextView;
+    TextView nameTextView, infoTextView, statusTextView, otherTextView, effortTextView;
     ImageView imageView, back;
 
     @Override
@@ -23,6 +23,7 @@ public class InfoActivity extends AppCompatActivity {
         infoTextView = findViewById(R.id.textViewInfo);
         statusTextView = findViewById(R.id.textViewStatus);
         otherTextView = findViewById(R.id.textViewWhyTheyMatter);
+        effortTextView = findViewById(R.id.textViewEfforts);
         imageView = findViewById(R.id.imageViewHome);
         back = findViewById(R.id.ButtonBack);
 
@@ -34,12 +35,14 @@ public class InfoActivity extends AppCompatActivity {
             String animal_info = i.getStringExtra("AnimalInfo");
             String status = i.getStringExtra("AnimalStatus");
             String other = i.getStringExtra("AnimalOtherInfo");
+            String effort = i.getStringExtra("WWFEfforts");
 
             nameTextView.setText(animalN);
             imageView.setImageResource(urlImage);
             infoTextView.setText(animal_info);
             otherTextView.setText(other);
             statusTextView.setText(status);
+            effortTextView.setText(effort);
         }
 
         back.setOnClickListener(new View.OnClickListener() {

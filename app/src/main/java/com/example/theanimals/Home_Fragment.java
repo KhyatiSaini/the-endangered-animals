@@ -7,6 +7,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -21,12 +22,22 @@ public class Home_Fragment extends Fragment implements Home_Adapter.SelectedAnim
     private RecyclerView homeRecyclerView;
     private Home_Adapter homeAdapter;
     private ArrayList<Home_Model> list;
+    ImageView back;
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.home_fragment, container, false);
         homeRecyclerView = view.findViewById(R.id.recyclerViewHome);
+        back = view.findViewById(R.id.back);
+
+        back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getContext(), HomeActivity.class);
+                startActivity(intent);
+            }
+        });
 
         addingDataHome();
         buildRecyclerViewHome();
@@ -71,7 +82,8 @@ public class Home_Fragment extends Fragment implements Home_Adapter.SelectedAnim
         intent.putExtra("AnimalInfo", info[position]);
         intent.putExtra("AnimalStatus", status[position]);
         intent.putExtra("AnimalOtherInfo", otherInfo[position]);
-        Log.e("inside SAH", "info : " + String.valueOf(info.length));
+        intent.putExtra("WWFEfforts", efforts[position]);
+        Log.e("HomeFragment", "Animal name : " + homeModel.getNameOfAnimal());
         startActivity(intent);
     }
 
@@ -528,4 +540,262 @@ public class Home_Fragment extends Fragment implements Home_Adapter.SelectedAnim
                             "\n" +
                             "Finless porpoises need an abundant food supply for survival. The destruction of the Baiji dolphin food supply was central to its extinction. Overfishing is the main factor that contributes to the decrease in finless porpoises’ food supply, but pollution and ship movement are factors as well."};
 
+    String[] efforts = {"WWF efforts\n" +
+            "\n" +
+            "WWF works with local communities, regional authorities, government and other non-governmental organizations to save the Amur leopard and ensure the long-term conservation of the region.\n" +
+            "\n" +
+            "STOPPING POACHING AND TRADE\n" +
+            "With such a small population left, the loss of each Amur leopard puts the species at greater risk of extinction. WWF supports antipoaching work in all Amur leopard habitat in the Russian Far East and in known leopard localities in northeast China. WWF implements programs to stop the illegal trade in Amur leopard parts. Together with TRAFFIC, the world’s largest wildlife trade monitoring network, we help governments enforce domestic and international trade restrictions on Amur leopard products. Amur leopards are listed on CITES Appendix I, prohibiting all commercial trade in the species.\n" +
+            "\n" +
+            "MONITORING POPULATIONS\n" +
+            "WWF monitors Amur leopard populations and its habitat. Our camera traps have often yielded amazing results, allowing the world to catch a glimpse the world’s rarest wild cat. We also work to increase the population of leopard prey like roe deer, sika deer and wild boar including releasing such deer into new reserves in China to provide founder animals to rebuild prey populations\n" +
+            "\n" +
+            "PROTECTING AMUR LEOPARD HABITAT\n" +
+            "This work includes increasing areas of protected land in both Russia and China, reducing illegal and unsustainable logging practices, and facilitating trade between companies committed to responsible forestry practices. In 2007, WWF and other conservationists successfully lobbied the Russian government to reroute a planned oil pipeline that would have endangered the leopard's habitat.\n" +
+            "\n" +
+            "\n" +
+            "A SAFE HAVEN\n" +
+            "Amur leopards received a safe haven in 2012 when the government of Russia declared a new protected area. Called Land of the Leopard National Park, this marked a major effort to save the world’s rarest cat. Extending nearly 650,000 acres it includes all of the Amur leopard’s breeding areas and about 60 percent of the critically endangered cat’s remaining habitat. The park is also home to 10 endangered Amur tigers. WWF lobbied for the establishment of this park in the Russian Far East since 2001.\n" +
+            "\n" +
+            "PROJECTS\n" +
+            "Camera Trap Photos of Amur Leopards\n" +
+            "A camera trap in a protected area in Russia has captured photos of eight Amur – one of the world’s most endangered wild cats. While a \"camera trap\" might sound menacing, it actually does not harm wildlife. The name is derived from the manner in which it \"captures\" wildlife on film.",
+            "WWF efforts\n" +
+                    "\n" +
+                    "WWF launched an international effort to save wildlife in 1961, rescuing black rhinos—among many other species—from the brink of extinction. Thanks to persistent conservation efforts across Africa, the total number of black rhinos grew from 2,410 in 1995 to more than 5,000 today.\n" +
+                    "\n" +
+                    "To protect black rhinos from poaching and habitat loss, WWF is taking action in three African rhino range countries: Namibia, Kenya, and South Africa. Together, these nations hold about 87% of the total black rhino population.\n" +
+                    "\n" +
+                    "TACKLING WILDLIFE CRIME\n" +
+                    "Poaching is the deadliest and most urgent threat to black rhinos. WWF is working with government agencies and partners in Namibia, Kenya, and South Africa to support law enforcement agencies, develop and build on innovative tech solutions, and equip and train rangers to stop poachers.\n" +
+                    "\n" +
+                    "In Namibia, WWF is leading a consortium of national NGOs to help implement the country’s ambitious law enforcement strategy to combat wildlife trafficking. WWF also supports the Namibian government in its effort to update its plan to grow black rhino populations, in part by moving rhinos from parks with significant populations to others that historically held rhinos but currently do not—a process known as translocation. We’re also taking other security measures to protect both black and white rhinos, such as DNA sampling.\n" +
+                    "In Kenya, WWF works with rangers to stop poaching in high-risk areas. We help provide the proper training and technology to catch and deter poachers. WWF is also supporting the development of Kenya Wildlife Service’s forensic lab and a DNA database called RhoDIS, which will be used to analyze DNA in criminal investigations to connect a poached animal with horn being sold.\n" +
+                    "In South Africa, WWF trains law enforcement agencies to address wildlife trafficking challenges. TRAFFIC, the world’s largest wildlife trade monitoring network, has played a vital role in bilateral law enforcement efforts between South Africa and Vietnam. This has gone hand-in-hand with written commitments to strengthen border and ports monitoring as well as information sharing in order to disrupt the illegal wildlife trade bring perpetrators to justice.\n" +
+                    "\n" +
+                    "PROTECTING AND MANAGING KEY POPULATIONS\n" +
+                    "Testing controls\n" +
+                    "WWF supports annual aerial population surveys at key sites such as Etosha National Park in Namibia. The surveys are critical for evaluating breeding success, deterring poachers, and monitoring rhino mortality. WWF is also working with partners to develop and implement cutting-edge technologies in Namibia, South Africa, and Kenya to closely monitor key populations. When paired with boots on the ground, innovative solutions like electronic identification and tracking tags, radio collars, drones, and camera traps provide us with the data we need to make important decisions for black rhino populations going forward. We install new thermal and infrared camera and software systems that can identify poachers from afar and alert park rangers of their presence.\n" +
+                    "\n" +
+                    "ENGAGING COMMUNITIES\n" +
+                    "Community support and engagement is a cornerstone of WWF’s work, particularly in Namibia. Hand-in-hand with our Namibia partners, we assist communities to set up conservancies and help to foster the knowledge, skills, and capacity required to successfully govern their conservancies and manage their wildlife resources. These communal lands are now home to Africa’s largest remaining free roaming black rhino population.\n" +
+                    "\n" +
+                    "Community engagement will also play a role in South Africa, where we are looking to conserve black rhino through community governance, training, and identification of alternative livelihood opportunities.\n" +
+                    "\n" +
+                    "EXPANDING BLACK RHINO RANGE\n" +
+                    "Over time, habitat loss has led to isolated, high-density rhino populations. These populations have slow growth rates, which can cause numbers to stagnate and eventually decline. They also raise the risk of disease transmission. To ensure a healthy and growing black rhino population, rhinos from high-density areas must be moved to low density areas with suitable habitat. WWF is supporting these efforts and partnering with government agencies and other NGOs to establish new black rhino populations.",
+                    "WWF efforts\n" +
+                            "\n" +
+                            "To secure a future for Bornean orangutans WWF focuses on restoring their habitats, addressing wildlife crime and reducing human-orangutan conflict.\n" +
+                            "\n" +
+                            "ADDRESSING THE ILLEGAL KILLING AND TRADE OF ORANGUTANS\n" +
+                            "WWF works closely with TRAFFIC, the wildlife trade monitoring network, to help governments enforce the laws that prohibit orangutan capture and trade. This work includes strengthening the capacity of rangers, prosecutors and customs officers to identify, investigate and prosecute wildlife crimes. We assist government and specialized organizations in rescuing orangutans from traders and from people who keep them illegally as pets. Many rescued orangutans are taken to refuges where they can recover and be rehabilitated, and then are eventually released back into the wild.\n" +
+                            "\n" +
+                            "REDUCING HUMAN-ORANGUTAN CONFLICTS\n" +
+                            "WWF works with the governments, local communities, plantation owners and indigenous Dayak people to help develop plantation management methods that do not affect orangutans. We assist with regional land use planning to ensure that agricultural areas are developed as far away from orangutan habitat as possible. We also help establish ecotourism to support conservation. Sustainable tourism can generate financial support for orangutan conservation, bring economic benefits to those living nearby, and increase the commitment of residents and foresters to protect the animals.\n" +
+                            "\n" +
+                            "COMMUNITIES FIND A VOICE THROUGH PHOTOGRAPHY\n" +
+                            "In 2010, WWF started a program in West Kalimantan, Indonesia that enables local communities to find a voice through photography. The program, Panda CLICK! (Communication Learning toward Innovative Change and Knowledge), encourages community members to capture photos and video of their surroundings—images they feel are significant to their culture and daily life. Participants are of all ages and include fishermen, farmers, teachers, students and tribal leaders. Panda CLICK! is part of WWF’s contribution to community education about nature conservation. The program encourages communities to transfer knowledge to younger generations through visual and written documentation.\n" +
+                            "\n" +
+                            "RESTORING HABITAT INTEGRITY\n" +
+                            "WWF works with governments to help create and manage a network of protected areas. We also collaborate with certified logging concessions to connect them with carefully managed “ecological corridors.” Studies show that Bornean orangutans can survive in logged forests if the impact of logging is reduced through selective logging, keeping fruit trees intact, and controlling hunting. WWF has developed scientifically rigorous assessment tools and plans to manage orangutan landscapes. We engage with timber and palm oil companies to develop specific protection and management plans for their concessions, in order to mitigate negative impacts on habitats and orangutan populations.\n" +
+                            "\n",
+                    "WWF efforts\n" +
+                            "\n" +
+                            "PROMOTING SUSTAINABLE FORESTRY\n" +
+                            "For the past 10 years, WWF and other non-governmental organizations have worked with logging companies, the Cameroon Ministry of Forest and Wildlife and local communities to foster sustainable management of the gorillas’ forest home. These efforts help to ensure that logging enterprises protect sensitive wildlife corridors and waterways and contribute to the fight against poaching.\n" +
+                            "\n" +
+                            "GORILLA RESEARCH\n" +
+                            "Cross River gorillas are the least well known of all the gorilla subspecies. In partnership with the Wildlife Conservation Society and the governments of Nigeria and Cameroon, WWF supports research about the ecology, distribution and population biology of these animals.\n" +
+                            "\n" +
+                            "PROTECTING GORILLA HABITAT\n" +
+                            "WWF and partners have worked with officials in Nigeria and Cameroon to establish a protected area for the Cross River gorilla that spans the border between the two nations. Within that protected area, WWF has established ranger posts, provided field and communication equipment for antipoaching staff, and established a system to monitor the gorilla population.",
+                    "\n" +
+                            "\n" +
+                            "WWF efforts\n" +
+                            "\n" +
+                            "MONITORING GORILLAS\n" +
+                            "The monitoring of gorillas even in protected areas was very difficult during the years of civil unrest. WWF has since trained Congolese Wildlife Authority (ICCN) staff to carry out surveys of eastern lowland gorillas and to monitor gorillas in Kahuzi-Biega National Park, recording details about their biology, location and habitat.\n" +
+                            "\n" +
+                            "EXPANDING PROTECTED AREAS\n" +
+                            "WWF works to create another protected area for the eastern lowland gorilla in the Itombwe Forest, south of Kahuzi-Biega National Park. We are conducting socio-economic studies and engaging with local villages and traditional authorities to determine the best way to proceed. WWF will work with the local people, park authorities and the Congolese government to clearly identify the protected area and assess its legal status.\n" +
+                            "\n" +
+                            "PROTECTING A NATIONAL PARK\n" +
+                            "During the last civil war in the DRC, parts of Kahuzi-Biega National Park were taken over by rebels. WWF and other partner groups have helped park staff to reestablish control over the park by rehabilitating patrol posts, training guards in antipoaching and law enforcement techniques and working with local contacts to clarify park boundaries.\n" +
+                            "\n",
+                            "WWF efforts\n" +
+                            "\n" +
+                            "WWF aims to reduce turtle bycatch by working with fisheries to switch to more turtle-friendly fishing hooks (\"circle\" hooks) and advocates for the use of special turtle excluder devices in nets. We run an international competition, known as Smart Gear, to attract creative new ways to solve bycatch problems and advance the best of those ideas. Winning devices have been designed to minimize the bycatch of turtles on tuna longlines and help turtles avoid gillnets. We track turtle movements using satellite to help prevent future interactions between fisheries and turtles. And we work with fishermen to save turtles caught in fishing gear.\n" +
+                            "PROTECTING SEA TURTLE HABITAT\n" +
+                            "WWF  works  around  the  world  to  establish  marine protected  areas (MPA)  to  ensure sea turtles have a safe place to nest, feed and migrate freely.  We encourage governments to strengthen legislation and provide funding for sea turtle protection. WWF  also supports  the  monitoring  and  patrolling  of  turtle nests  in  many  parts  of  the  world to equip local turtle conservationists. This often leads to ecotourism opportunities and offers alternative livelihoods.\n" +
+                            "\n" +
+                            "SATELLITE TRACKING\n" +
+                            "Satellite telemetry allows researchers to track sea turtles as they swim from place to place. These satellite tags do not harm the turtles in any way and are designed to eventually fall off. The data will tell us where important feeding areas are, help us understand migration patterns, and anticipate where turtles may come in contact with fisheries and their gear.\n" +
+                            "\n" +
+                            "ADDRESSING WILDLIFE TRADE\n" +
+                            "WWF works with communities to reduce turtle harvesting and local trade in the Coral Triangle. In Malaysia, we help raise awareness about the threats hawksbills face and communicate the importance of protecting them. Exploitation  of  turtles is often driven by a lack of economic choices so WWF works to develop alternative livelihoods so that local people are no longer dependent on turtle products for income. WWF also works to stop the illegal trade of hawksbill products around the world through TRAFFIC, the wildlife trade monitoring network. We also train and equip local rangers to protect turtles from poaching and patrol nesting beaches\n" ,
+                        "WWF efforts\n" +
+                                "\n" +
+                                "ESTABLISHING A SECOND POPULATION\n" +
+                                "\n" +
+                                "To reduce the likelihood of extinction in the event of a major natural disaster in Ujung Kulon National Park, WWF and partners are working to establish a second population of Javan rhinos. We’ve identified a potential site for the second population. Next steps include conducting a feasibility study of the area, setting up protected area management systems, and working with communities in the buffer-zone to prevent encroachment. WWF will also support scientific research to guide these conservation and management strategies.\n" +
+                                "\n" +
+                                "PROTECTING RHINOS FROM MAN-MADE THREATS\n" +
+                                "Effective protection of the world’s only remaining Javan rhino population is critical to ensuring the species’ survival. WWF will continue our support for rhino protection patrols in Ujung Kulon National Park and work with communities who live in the park’s buffer zone to eliminate human encroachment into the Javan rhino’s limited habitat and poaching.\n" +
+                                "\n" +
+                                "REINVIGORATING EXISTING HABITAT\n" +
+                                "The rhino’s current range within Ujung Kulon National Park is believed to have reached its carrying capacity—the maximum number of rhinos the habitat can support before the growth rate slows. To increase the size and quality of the habitat and ensure a growing population, WWF plans to remove the Arenga palm tree, which has squeezed out the rhino’s native food plants in 6,178 acres of former habitat within the park. Extraction of the palm within the park would be followed by active restoration of other natural vegetation and food plants for rhinos over the next five years.",
+                        "WWF efforts\n" +
+                                "\n" +
+                                "WWF has been working on orangutan conservation since the 1970s. Our efforts include conserving orangutan habitat, antipoaching, promoting sustainable forestry and agriculture, and halting the pet trade.\n" +
+                                "\n" +
+                                "PROTECTING ORANGUTANS\n" +
+                                "WWF works in both Borneo and Sumatra to secure well-managed protected areas and wider forest landscapes to connect sub-populations of orangutans. Our work on sustainable production of commodities contributes to the conservation of major orangutan habitats in Borneo and Sumatra. We also monitor orangutan populations, work on ecotourism and provide community based support for orangutan conservation.\n" +
+                                "\n" +
+                                "STOPPING ILLEGAL WILDLIFE TRADE\n" +
+                                "WWF works with TRAFFIC, the wildlife trade monitoring network, to help governments enforce restrictions on the trade in live animals and orangutan products. We also help to rescue trafficked orangutans, which recover in refuges and are eventually released back into the wild.\n" +
+                                "\n" +
+                                "Projects\n" +
+                                "\n" +
+                                "Thirty Hills\n" +
+                                "WWF and partners secure protection for critical rain forest in Sumatra. Thirty Hills is one of the last places on Earth where elephants, tigers and orangutans coexist in the wild.",
+                        "WWF efforts\n" +
+                                "\n" +
+                                "WWF has been involved with the protection of the saola since its discovery. WWF's work to support the saola focuses on strengthening and establishing protected areas. We also work on research, community based forest management, capacity building and strengthening law enforcement.\n" +
+                                "\n" +
+                                "WWF has been involved in creating a plan for the management of protected areas and continues to work on projects in the region. We helped improve the management of Vu Quang Nature Reserve where the saola was discovered. In the last four years we have helped establish two new adjacent saola reserves in the Thua-Thien Hue and Quang Nam provinces. We lead saola surveys, do research and play a very active role in an international working group established to save the saola.",
+                        "WWF efforts\n" +
+                                "\n" +
+                                "REDUCING HUMAN-ELEPHANT CONFLICT\n" +
+                                "\n" +
+                                "The region around Tesso Nilo in central Sumatra is being cleared so rapidly that elephants often go to farms and commercial plantations in search of food. In 2004, WWF started an Elephant Flying Squad, which is made up of rangers, noise and light-making devices, a truck, and four trained elephants that would drive wild elephants back into the forests if they threatened to enter villages.\n" +
+                                "\n" +
+                                "WWF recruited trainers and elephants from elephant camps that the Indonesian government maintains. These nine men and four elephants went through intensive training to create bonds to make them an effective team that safely drives back wild elephants. The project proved so effective in reducing losses suffered by local communities and companies that there are now four flying squads in the Riau Province. WWF runs one of them and the others are run by companies operating in the area and by Tesso Nilo National Park.\n" +
+                                "\n" +
+                                "The squads help bring short-term relief to the intense conflict between people and elephants and to create support for elephant conservation among struggling communities. WWF carries out research on elephants and the nature of their conflicts with humans and works with local communities and companies to develop solutions that ensure that there is space for humans and elephants to coexist.\n" +
+                                "\n" +
+                                "SECURING HEALTHY FORESTS\n" +
+                                "A major breakthrough was achieved in Sumatra with the 2004 declaration of Tesso Nilo National Park, a protected area, which represents a significant step towards the protection of the elephant's habitat. The Tesso Nilo forest is one of the last forest blocks large enough to support a viable population of critically endangered Sumatran elephants and is also home to the critically endangered Sumatran tiger.\n" +
+                                "\n" +
+                                "WWF calls on the government of Indonesia, palm oil companies, members of the pulp and paper industry and conservation organizations, to work together to conserve Sumatran elephants, and their unique habitat. Because Sumatra’s trees are rooted in carbon-rich deep peat soil, the high rate of deforestation is also causing high amounts of carbon to be released into the atmosphere, which contributes to climate change.\n" +
+                                "\n" +
+                                "\n" +
+                                "HALTING POACHING AND STOPPING TRADE\n" +
+                                "In response to high incidents of elephant and tiger poaching in central Sumatra, WWF and its local partners have coordinated wildlife patrol units that conduct antipoaching patrols, confiscate snares and other means of trapping animals, educate local people on the laws in place concerning poaching, and help authorities apprehend criminals. The evidence collected by wildlife patrol units has helped bring known poachers to court. In many Asian countries, WWF works with TRAFFIC, the wildlife trade monitoring network, to reduce the threat that illegal and illicit domestic ivory markets pose to wild elephants.\n" +
+                                "\n",
+                        "WWF efforts\n" +
+                                "\n" +
+                                "SAVING ORANGUTAN FORESTS\n" +
+                                "WWF works with other organizations to stop Asia Pulp and Paper/ Sinar Mas Group from clearing the largest portion of natural forest remaining outside the Bukit Tigapuluh National Park. This unprotected forest provides crucial habitat for the Sumatran orangutan, as well as numerous other species. We helped develop a spatial plan based on Sumatra’s ecosystem to conserve the last stands of forests on the island. We also collaborate with various partners to protect forests in the Bukit Tigapuluh landscape, an important area where an orangutan population is being introduced.\n" +
+                                "\n" +
+                                "WWF supports the Indonesian government’s 2009 commitment to reduce the country’s greenhouse gas emissions by 26% by 2020, and up to 41% with external aid. After a $1 billion pledge from Norway, the Indonesian government promised to stop granting licenses for clearing tropical and peat forests in Sumatra and elsewhere, starting in 2011. We use our expertise to help the government protect the forests and achieve emission reductions.\n" +
+                                "\n" +
+                                "MITIGATING HUMAN-ORANGUTAN CONFLICT\n" +
+                                "WWF works with Indonesian non-governmental organizations to mitigate human-orangutan conflict in and around palm oil plantations. A guide was developed that identifies management practices that will benefit conservation and industry.\n" +
+                                "\n" +
+                                "FIGHTING WILDLIFE CRIME\n" +
+                                "WWF works with TRAFFIC, the global wildlife trade monitoring network,  to help governments enforce restrictions on the trade in live animals and orangutan products. We continue to investigate the root causes of this trade and encourage stricter law enforcement.\n" +
+                                "\n" +
+                                "PROJECTS\n" +
+                                "Thirty Hills\n" +
+                                "WWF and partners secure protection for critical rain forest in Sumatra. Thirty Hills is one of the last places on Earth where elephants, tigers and orangutans coexist in the wild.\n",
+                        "WWF efforts\n" +
+                                "\n" +
+                                "To save the Sumatran rhino, WWF is working to grow population numbers by fighting wildlife crime and protecting their habitat. We’re consolidating the remaining animals into a small number of intensively managed sites, while prioritizing captive breeding as a conservation approach.\n" +
+                                "\n" +
+                                "MONITORING RHINO DISTRIBUTION AND POPULATION SIZE\n" +
+                                "WWF works to identify the best scientific methods to monitor rhino populations in the wild, analyze data, and train survey teams. We use the most recent technologies to complete our work, such as camera traps and environmental DNA.\n" +
+                                "\n" +
+                                "MANAGING POPULATIONS\n" +
+                                "WWF works with the Indonesian government and other organizations to assess how at risk each sub-population is, and to identify immediate protection needs. WWF also supports the establishment of “Intensive Protection Zones” that receive enhanced enforcement, along with captive breeding facilities to help safely grow population numbers. We’re moving rhinos that are isolated or in small groups and fragile populations to a place that has successfully retained a larger number of animals.\n" +
+                                "\n" +
+                                "ENGAGING WITH KEY GOVERNMENTS AND PARTNERS\n" +
+                                "WWF continues engaging with high-level government officials and partners to create a long-term recovery plan. We collaborate with US-based and global conservation organizations, including the IUCN’s Species Survival Commission and Asian Rhino Specialist Group, the International Rhino Foundation, Wildlife Conservation Society, and Global Wildlife Conservation.\n" +
+                                "\n" +
+                                "RESCUING SUMATRAN RHINOS\n" +
+                                "In support of the Government of Indonesia’s efforts, WWF, Global Wildlife Conservation, International Rhino Foundation, International Union for Conservation of Nature, and the National Geographic Society, have joined together with Indonesian partners on-the-ground to launch a Sumatran Rhino Rescue effort. Beginning in 2018, this alliance of organizations aims to relocate the widely dispersed rhino populations from the wild to managed breeding facilities designed specifically for their care. In addition to securing the remaining rhino population, the effort will develop the infrastructure to care for the rhinos and grow their numbers population of Sumatran rhinos.\n" +
+                                "\n" +
+                                "SUPPORTING RHINO PROTECTION UNITS\n" +
+                                "WWF supports rangers working to protect rhinos in Bukit Barisan Selatan, one of the most biologically rich areas on Earth, and Way Kambas National Park, a crucial habitat for this species. WWF is also looking to shore up Rhino Protection Units on the island of Kalimantan, where Sumatran rhinos were recently re-discovered.\n" +
+                                "\n" +
+                                "\n" +
+                                "PROJECTS\n" +
+                                "Sumatran Rhino Rescue Alliance\n" +
+                                "In support of the Government of Indonesia’s efforts, WWF, Global Wildlife Conservation, International Rhino Foundation, International Union for Conservation of Nature, and the National Geographic Society, have joined together with Indonesian partners on-the-ground to launch a Sumatran Rhino Rescue effort\n",
+                        "WWF efforts\n" +
+                                "\n" +
+                                "PROTECTING TIGER HABITAT\n" +
+                                "Protecting the places where tigers live and breed is the backbone of TX2, an effort to double the number of wild tigers by 2022. WWF works to protect these important sites that are—or have the potential to become—breeding grounds, allowing tigers to disperse across larger landscapes, which we call “heartlands.” Sumatra is home to five of those heartlands both in Central and South Sumatra. It is only through the successful protection of these heartlands that Asia will be able to double its tiger population.\n" +
+                                "\n" +
+                                "WWF is also working to save one of the last great stands of rain forest in Thirty Hills, or Bukit Tigapuluh, in Central Sumatra. In August 2015, WWF-Indonesia received licenses to manage about 100,000 acres of forests bordering Bukit Tigapuluh National Park that been originally earmarked for logging concessions. Together with Frankfurt Zoological Society and The Orangutan Project, WWF is working through a newly formed concession company that will focus on restoring parts of the concession that have been deforested, setting aside some parts for income generation to benefit local and indigenous communities and support the forestry operations—all while protecting the majority of forest that is home to tigers, orangutans, and Asian elephants.\n" +
+                                "\n" +
+                                "MONITORING TIGERS\n" +
+                                "WWF is undertaking groundbreaking research on tigers in central Sumatra. Using camera traps to estimate population size and distribution as well as habitat use, we identify wildlife corridors that require protection across the central Sumatran tiger landscape.\n" +
+                                "\n" +
+                                "INFLUENCING LAND-USE PLANNING\n" +
+                                "WWF helps design land-use plans that incorporate critical wildlife habitat. Sumatra’s district and provincial governments are integrating this information into their plans, including zoning decisions and concessions for economic activities. Along with WWF’s efforts to mitigate the palm, pulp and paper, and timber industries’ impact on the island’s biodiversity, this work helps Sumatra balance environmental realities with people’s social and economic needs\n" +
+                                "\n" +
+                                "Projects\n" +
+                                "\n" +
+                                "Shutting Down Tiger Farms\n" +
+                                "Tiger ‘farms’ are captive facilities that breed tigers to supply or directly engage in the commercial trade of tiger parts or products. WWF is calling for greater oversight and protection of all captive tigers.\n" +
+                                "\n" +
+                                "Thirty Hills\n" +
+                                "WWF and partners secure protection for critical rain forest in Sumatra. Thirty Hills is one of the last places on Earth where elephants, tigers and orangutans coexist in the wild.\n" +
+                                "\n" +
+                                "Photos from Camera Traps in Indonesia\n" +
+                                "On the Indonesian island of Sumatra, WWF collaborates with the Riau Forestry Department to use camera traps to help determine which species are present and absent from the region.\n" +
+                                "\n" +
+                                "Camera Trap Video of Sumatran Tiger Cubs\n" +
+                                "Video cameras installed in the Sumatran jungle have captured close-up footage of a tiger and two cubs. This is  the first time that WWF has recorded evidence of tiger breeding in central Sumatra in what should be prime tiger habitat.",
+                        "WWF efforts\n" +
+                                "\n" +
+                                "INTERNATIONAL COOPERATION TO BOOST VAQUITA-SAFE FISHING\n" +
+                                "In July 2016, President Barack Obama and President Enrique Peña Nieto of Mexico announced bilateral collaboration measures to protect the vaquita. As a follow up to this meeting and to the recommendations CIRVA presented in its vaquita report, Mexico's National Institute of Fisheries (INAPESCA) and WWF Mexico established an international committee of experts to further develop and urgently implement vaquita-safe fishing technologies.\n" +
+                                "\n" +
+                                "The committee advises the Mexican government on improving fishing techniques not harmful to vaquita, including those that INAPESCA and WWF Mexico have together developed over the last years.\n" +
+                                "\n" +
+                                "This independent committee is charged with improving existing vaquita-safe fishing technologies (such as the small trawl to catch shrimp and traps and other gear for fish) to substitute gillnets, which are currently banned in vaquita habitat in the Upper Gulf of California, the only place on Earth where the vaquita exists.\n" +
+                                "\n" +
+                                "The committee is comprised of experts from Texas A&M University, NOAA South East Fisheries Center, Swedish University of Agriculture Science, Technological University of Denmark, Canada's Fisheries and Marine Institute, New England Aquarium, FAO, INAPESCA, and WWF.\n" +
+                                "\n" +
+                                "A protocol and guidelines to catch shrimp with vaquita-safe technology is expected to be ready soon.\n" +
+                                "\n" +
+                                "SAVING THE LAST OF THE VAQUITAS\n" +
+                                "\n" +
+                                "WWF has been on red alert ever since the report from the International Committee for the Recovery of the Vaquita (CIRVA) estimated the vaquita population at no more than 10. In the past, WWF has helped study vaquitas and implement protective measures with the Mexican government and local partners. We have been working with Mexican scientists, government representatives, and other partners and collaborators to develop a long-term strategy for the conservation of the species.\n" +
+                                "\n" +
+                                "We are now calling for urgent and immediate measures to save the last of the vaquitas.\n" +
+                                "\n" +
+                                "Based on expert recommendations, WWF has called on the Mexican government to strongly enforce a ban on gillnet fisheries throughout the entire range of the species since September 2014. We also ask that the US and China help stamp out the illegal trade in totoaba products and provide enforcement support to the Mexican government, without which vaquitas will go the way of the dodo.\n" +
+                                "\n" +
+                                "\n" +
+                                "'GHOST NET' RETRIEVAL AND ACOUSTIC MONITORING\n" +
+                                "WWF's goal is to achieve a gillnet-free Upper Gulf of California where wild vaquita can thrive. In order to protect the vaquita's native habitat, we closely collaborate with partners to support:\n" +
+                                "\n" +
+                                "The retrieval of lost or abandoned illegal \"ghost\" gillnets, which continue to entangle and kill vaquitas and other marine species and providing technology to make it easier and more effective to remove these nets from the water. From October 2016 to July 2017 alone, this initiative retrieved more than 400 nets from vaquita habitat, and we will continue to search for more, given continued illegal fishing.\n" +
+                                "WWF has long collaborated on acoustic monitoring, to help estimate the vaquita population. WWF will continue to support acoustic monitoring of the population, as it provides crucial information for the design and implementation of effective conservation measures.",
+                        "WWF efforts\n" +
+                                "\n" +
+                                "COMBATING EBOLA\n" +
+                                "The Ebola virus has likely spread throughout much of the western lowland gorilla’s range. WWF has begun support for programs that increase antipoaching efforts and raise awareness of the dangers of eating bushmeat. In addition, WWF has contributed to Ebola research and efforts to develop a vaccine for gorillas.\n" +
+                                "\n" +
+                                "DEVOLOPING ECOTOURISM\n" +
+                                "Western Lowland Gorilla Developing Ecotourism\n" +
+                                "Vistitors at the lookout station, Dzanga-Sangha Special Reserve.\n" +
+                                "\n" +
+                                "WWF has helped to develop opportunities for tourism in the Gamba Protected Areas Complex of Gabon and the Dzanga-Sangha Protected Areas in the Central African Republic and is pursuing other opportunities in places such as Campo Ma’an National Park in Cameroon. Through these programs, tourists are able to view western lowland gorillas while local communities benefit from programs for rural development and sustainable natural resource use.\n" +
+                                "\n" +
+                                "PROMOTING SUSTAINABLE DEVELOPMENT\n" +
+                                "Unsustainable logging practices, commercial hunting and fishing, and oil and gas development threaten the western lowland gorilla across its range. WWF and its partners are working to establish a network of protected areas across the Congo Basin and are promoting development of logging and mining industries that are well managed both ecologically and socially.\n" +
+                                "\n" +
+                                "GORILLAS OF DZANGA-SANGHA\n" +
+                                "One of the few places that humans can see western lowland gorillas in the wild is the Dzanga-Sangha Protected Areas in the Central African Republic. These opportunities for gorilla viewing are so rare, in part, because it takes three or more years of careful and patient gorilla tracking and following to habituate the animals to the presence of humans.\n" +
+                                "\n" +
+                                "“The follow and habituation of gorillas in Dzanga-Sangha would never have been possible without the extensive knowledge of the BaAka trackers, which are the real backbone of our program,” says Chloe Cippoletta, who led the Dzanga-Sangha habituation field staff for years.\n" +
+                                "\n" +
+                                "WWF has long worked with local BaAka trackers as part of the habituation program, capitalizing on their knowledge of their forest homeland and their ability to locate the gorillas even when traces of the animals are elusive. Tourism dollars are a key part of forest and gorilla protection in this region. Forty percent of the money from park entry fees at Dzanga Sangha, for example, is dedicated to programs in the local community that promote rural development and sustainable use of natural resources.",
+                        "WWF efforts\n" +
+                            "\n" +
+                            "Since 2002, WWF and partners have reconnected more than 40 floodplain lakes with the main stem of the Yangtze River to restore seasonal flows and allow the migration of species, like the finless porpoise, between the lakes and the river. This contributes to a secure food supply for the Yangtze finless porpoise. WWF also works to provide fishermen with feasible alternatives for income generation. This helps to develop the economy, stop overfishing and allows fishermen to contribute to the protection of the finless porpoise"};
 }

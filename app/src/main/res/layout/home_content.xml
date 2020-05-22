@@ -17,12 +17,12 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="150sp"
-        android:textColor="@color/design_default_color_secondary_variant"
-        android:padding="10sp"
-        android:textSize="20sp"
-        android:textStyle="bold"
         android:layout_marginTop="25sp"
-        android:text="TextView" />
+        android:padding="10sp"
+        android:text="TextView"
+        android:textColor="@color/design_default_color_secondary_variant"
+        android:textSize="20sp"
+        android:textStyle="bold" />
 
     <ImageView
         android:id="@+id/imageView"
