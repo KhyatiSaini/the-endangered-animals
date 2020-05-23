@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#0B0000"
+    tools:context=".ImageActivity">
+
+    <ImageView
+        android:id="@+id/imageViewFull"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:srcCompat="@drawable/amurleopard"/>
+
+    <ImageButton
+        android:id="@+id/imageButtonLast"
+        android:layout_width="40sp"
+        android:layout_height="40sp"
+        android:background="@android:color/transparent"
+        app:srcCompat="@drawable/back"
+        tools:ignore="VectorDrawableCompat" />
+
+</RelativeLayout>

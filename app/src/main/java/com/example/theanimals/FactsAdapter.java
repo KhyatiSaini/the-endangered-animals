@@ -1,5 +1,6 @@
 package com.example.theanimals;
 
+import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,9 +15,13 @@ import java.util.List;
 public class FactsAdapter extends RecyclerView.Adapter<FactsAdapter.ViewHolder> {
 
    private static List<FactsModel> factsModelList;
+   private static Context context;
+   private static SelectedImage selectedImage;
 
-    public FactsAdapter(List<FactsModel> factsModelList){
+    public FactsAdapter(List<FactsModel> factsModelList, Context context, SelectedImage selectedImage){
         this.factsModelList = factsModelList;
+        this.context = context;
+        this.selectedImage = selectedImage;
     }
 
     @NonNull
@@ -50,6 +55,10 @@ public class FactsAdapter extends RecyclerView.Adapter<FactsAdapter.ViewHolder> 
         return position;
     }
 
+   public interface SelectedImage{
+        void selectedImage(FactsModel factsModel, Context context);
+    }
+
     public static class ViewHolder extends RecyclerView.ViewHolder {
 
         private static ImageView imageView;
@@ -62,6 +71,13 @@ public class FactsAdapter extends RecyclerView.Adapter<FactsAdapter.ViewHolder> 
             imageView = itemView.findViewById(R.id.imageAnimal);
             textView = itemView.findViewById(R.id.textVewFact);
             textTitle = itemView.findViewById(R.id.Name);
+
+            imageView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    selectedImage.selectedImage(factsModelList.get(getAdapterPosition()), context);
+                }
+            });
 
         }
 
