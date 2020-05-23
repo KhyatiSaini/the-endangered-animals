@@ -4,7 +4,7 @@
     android:layout_height="match_parent"
     xmlns:tools="http://schemas.android.com/tools"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:background="#ffffff">
+    android:background="#040303">
 
     <TextView
         android:id="@+id/textView2"
@@ -13,16 +13,16 @@
         android:layout_gravity="center_horizontal"
         android:background="@color/design_default_color_error"
         android:padding="10sp"
-        android:text="FACTS FRAGMENT"
+        android:text="INTERESTING FACTS"
         android:textAlignment="center"
         android:textColor="#ffffff"
-        android:textSize="15sp"
+        android:textSize="20sp"
         android:textStyle="bold" />
 
     <ImageView
         android:id="@+id/imageBack"
         android:layout_width="50sp"
-        android:layout_height="40sp"
+        android:layout_height="46sp"
         android:background="@android:color/transparent"
         android:contentDescription="@string/back"
         android:padding="10sp"

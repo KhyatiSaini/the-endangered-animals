@@ -30,8 +30,9 @@ public class FactsAdapter extends RecyclerView.Adapter<FactsAdapter.ViewHolder> 
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         int image = factsModelList.get(position).getAnimalImageResource();
         String fact = factsModelList.get(position).getFact();
+        String name = factsModelList.get(position).getAnimalName();
 
-        ViewHolder.setData(image, fact);
+        ViewHolder.setData(image, fact, name);
     }
 
     @Override
@@ -53,18 +54,21 @@ public class FactsAdapter extends RecyclerView.Adapter<FactsAdapter.ViewHolder> 
 
         private static ImageView imageView;
         private static TextView textView;
+        private static TextView textTitle;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
 
             imageView = itemView.findViewById(R.id.imageAnimal);
             textView = itemView.findViewById(R.id.textVewFact);
+            textTitle = itemView.findViewById(R.id.Name);
 
         }
 
-        public static void setData(int image, String fact) {
+        public static void setData(int image, String fact, String name) {
             imageView.setImageResource(image);
             textView.setText(fact);
+            textTitle.setText(name);
         }
     }
 }
