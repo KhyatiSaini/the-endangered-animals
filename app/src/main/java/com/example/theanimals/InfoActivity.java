@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -49,6 +50,16 @@ public class InfoActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 InfoActivity.this.finish();
+            }
+        });
+
+        imageView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(InfoActivity.this, ImageActivity.class);
+                intent.putExtra("Image", i.getIntExtra("ImageURL", R.drawable.home));
+                Log.e("InfoActivity", "image selected: " + i.getStringExtra("AnimalName"));
+                startActivity(intent);
             }
         });
     }

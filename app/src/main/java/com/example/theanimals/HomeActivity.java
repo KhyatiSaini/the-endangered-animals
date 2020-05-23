@@ -13,7 +13,7 @@ import android.util.Log;
 import android.view.MenuItem;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import java.util.ArrayList;
-public class HomeActivity extends AppCompatActivity implements Adapter.SelectedAnimal {
+public class HomeActivity extends AppCompatActivity implements Adapter.SelectedAnimal, Adapter.ImageSelected {
 
     BottomNavigationView bottomNavigationView;
     private RecyclerView recyclerView;
@@ -37,7 +37,7 @@ public class HomeActivity extends AppCompatActivity implements Adapter.SelectedA
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
         linearLayoutManager.setOrientation(RecyclerView.VERTICAL);
         recyclerView.setLayoutManager(linearLayoutManager);
-        adapter = new Adapter(list, getApplicationContext(), (Adapter.SelectedAnimal) this);
+        adapter = new Adapter(list, getApplicationContext(), (Adapter.SelectedAnimal) this, this);
         recyclerView.setAdapter(adapter);
     }
 
@@ -84,6 +84,14 @@ public class HomeActivity extends AppCompatActivity implements Adapter.SelectedA
         intent.putExtra("AnimalName", model.getAnimalName());
         intent.putExtra("AnimalInfo", model.getInfo());
         Log.e("HomeActivity", "selected animal: " + model.getAnimalName());
+        startActivity(intent);
+    }
+
+    @Override
+    public void imageSelected(Model model, Context context) {
+        Intent intent = new Intent(getApplicationContext(), ImageActivity.class);
+        Log.e("HomeActivity", "imageSelected: "+ model.getAnimalName());
+        intent.putExtra("Image", model.getImageResource());
         startActivity(intent);
     }
 }

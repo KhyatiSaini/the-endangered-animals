@@ -13,7 +13,7 @@
         android:layout_gravity="center_horizontal"
         android:background="@color/design_default_color_error"
         android:padding="10sp"
-        android:text="INTERESTING FACTS"
+        android:text="@string/interesting_facts"
         android:textAlignment="center"
         android:textColor="#ffffff"
         android:textSize="20sp"

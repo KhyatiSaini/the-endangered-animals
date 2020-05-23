@@ -17,7 +17,7 @@
         android:textAlignment="center"
         android:textColor="#ffffff"
         android:background="@color/design_default_color_error"
-        android:text="Critically Endangered Animals"
+        android:text="@string/critically_endangered_animals"
         android:layout_gravity="center_horizontal" />
 
     <androidx.recyclerview.widget.RecyclerView
@@ -32,6 +32,7 @@
         android:padding="10sp"
         android:layout_height="45sp"
         app:srcCompat="@drawable/back"
-        tools:ignore="VectorDrawableCompat" />
+        tools:ignore="VectorDrawableCompat"
+        android:contentDescription="@string/todo" />
 
 </RelativeLayout>

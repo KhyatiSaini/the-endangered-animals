@@ -17,11 +17,13 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder> {
     private static List<Model> modelList;
     private static Context context;
     private static SelectedAnimal selected;
+    private static ImageSelected imageSelected;
 
-    public Adapter(List<Model> modelList, Context context, SelectedAnimal selected) {
+    public Adapter(List<Model> modelList, Context context, SelectedAnimal selected, ImageSelected imageSelected) {
         this.modelList = modelList;
         this.context = context;
         this.selected = selected;
+        this.imageSelected = imageSelected;
     }
 
     @NonNull
@@ -60,6 +62,10 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder> {
         void selected(Model model, Context context);
     }
 
+    public interface ImageSelected{
+        void imageSelected(Model model, Context context);
+    }
+
     public static class ViewHolder extends RecyclerView.ViewHolder {
 
         private static ImageView imageView;
@@ -76,6 +82,27 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder> {
             next = itemView.findViewById(R.id.imageViewButton);
 
             next.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    selected.selected(modelList.get(getAdapterPosition()), context);
+                }
+            });
+
+            imageView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    imageSelected.imageSelected(modelList.get(getAdapterPosition()), context);
+                }
+            });
+
+            body.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    selected.selected(modelList.get(getAdapterPosition()), context);
+                }
+            });
+
+            title.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
                     selected.selected(modelList.get(getAdapterPosition()), context);

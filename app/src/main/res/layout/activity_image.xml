@@ -7,11 +7,10 @@
     android:background="#0B0000"
     tools:context=".ImageActivity">
 
-    <ImageView
+    <com.github.chrisbanes.photoview.PhotoView
         android:id="@+id/imageViewFull"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        app:srcCompat="@drawable/amurleopard"/>
+        android:layout_height="match_parent"/>
 
     <ImageButton
         android:id="@+id/imageButtonLast"
@@ -19,6 +18,7 @@
         android:layout_height="40sp"
         android:background="@android:color/transparent"
         app:srcCompat="@drawable/back"
-        tools:ignore="VectorDrawableCompat" />
+        tools:ignore="VectorDrawableCompat"
+        android:contentDescription="@string/todo"/>
 
 </RelativeLayout>

@@ -17,7 +17,9 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
 
-public class HomeFragment extends Fragment implements HomeAdapter.SelectedAnimalHome{
+import javax.security.auth.login.LoginException;
+
+public class HomeFragment extends Fragment implements HomeAdapter.SelectedAnimalHome, HomeAdapter.ImageSelectedHome{
 
     private RecyclerView homeRecyclerView;
     private HomeAdapter homeAdapter;
@@ -49,7 +51,7 @@ public class HomeFragment extends Fragment implements HomeAdapter.SelectedAnimal
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this.getActivity());
         linearLayoutManager.setOrientation(RecyclerView.VERTICAL);
         homeRecyclerView.setLayoutManager(linearLayoutManager);
-        homeAdapter = new HomeAdapter(list, getContext(), this);
+        homeAdapter = new HomeAdapter(list, getContext(), this, this);
         homeRecyclerView.setAdapter(homeAdapter);
     }
 
@@ -84,6 +86,14 @@ public class HomeFragment extends Fragment implements HomeAdapter.SelectedAnimal
         intent.putExtra("AnimalOtherInfo", otherInfo[position]);
         intent.putExtra("WWFEfforts", efforts[position]);
         Log.e("HomeFragment", "Animal name : " + homeModel.getNameOfAnimal());
+        startActivity(intent);
+    }
+
+    @Override
+    public void imageSelectedHome(HomeModel homeModel, Context context) {
+        Intent intent = new Intent(getContext(), ImageActivity.class);
+        intent.putExtra("Image", homeModel.getAnimalImageResource());
+        Log.e("Home Fragment", "imageSelectedHome: " + homeModel.getNameOfAnimal());
         startActivity(intent);
     }
 

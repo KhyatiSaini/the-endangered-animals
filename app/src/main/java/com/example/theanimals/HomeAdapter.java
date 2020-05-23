@@ -17,11 +17,13 @@ public class HomeAdapter extends RecyclerView.Adapter<HomeAdapter.ViewHolder>{
     private static List<HomeModel> homeModelList;
     private static Context context;
     private static SelectedAnimalHome selectedAnimalHome;
+    private static ImageSelectedHome imageSelectedHome;
 
-    public HomeAdapter(List<HomeModel> homeModelList, Context context, SelectedAnimalHome selectedAnimalHome) {
+    public HomeAdapter(List<HomeModel> homeModelList, Context context, SelectedAnimalHome selectedAnimalHome, ImageSelectedHome imageSelectedHome) {
         this.homeModelList = homeModelList;
         this.context = context;
         this.selectedAnimalHome = selectedAnimalHome;
+        this.imageSelectedHome = imageSelectedHome;
     }
 
     @NonNull
@@ -59,6 +61,10 @@ public class HomeAdapter extends RecyclerView.Adapter<HomeAdapter.ViewHolder>{
         void selectedAnimalHome(HomeModel homeModel, Context context, int position);
     }
 
+    public interface ImageSelectedHome{
+        void imageSelectedHome(HomeModel homeModel, Context context);
+    }
+
     public static class ViewHolder extends RecyclerView.ViewHolder {
 
         private static ImageView imageView;
@@ -73,6 +79,20 @@ public class HomeAdapter extends RecyclerView.Adapter<HomeAdapter.ViewHolder>{
             next = itemView.findViewById(R.id.imageView);
 
             next.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    selectedAnimalHome.selectedAnimalHome(homeModelList.get(getAdapterPosition()), context, getAdapterPosition());
+                }
+            });
+
+            imageView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    imageSelectedHome.imageSelectedHome(homeModelList.get(getAdapterPosition()), context);
+                }
+            });
+
+            textView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
                     selectedAnimalHome.selectedAnimalHome(homeModelList.get(getAdapterPosition()), context, getAdapterPosition());

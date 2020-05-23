@@ -2,4 +2,9 @@
     <string name="app_name">TheAnimals</string>
     <string name="back" />
     <string name="animalName" />
+    <string name="todo">TODO</string>
+    <string name="textview">TextView</string>
+    <string name="interesting_facts">INTERESTING FACTS</string>
+    <string name="critically_endangered_animals">Critically Endangered Animals</string>
+    <string name="statistics_fragment">STATISTICS FRAGMENT</string>
 </resources>

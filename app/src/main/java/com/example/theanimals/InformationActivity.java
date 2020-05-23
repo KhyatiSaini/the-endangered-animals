@@ -2,6 +2,7 @@ package com.example.theanimals;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -40,6 +41,16 @@ public class InformationActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 InformationActivity.this.finish();
+            }
+        });
+
+        animalImageView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(InformationActivity.this, ImageActivity.class);
+                intent.putExtra("Image", i.getIntExtra("ImageURL", R.drawable.home));
+                Log.e("InformationActivity", "selected Image: " + i.getStringExtra("AnimalName"));
+                startActivity(intent);
             }
         });
     }

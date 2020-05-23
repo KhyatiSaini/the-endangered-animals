@@ -14,12 +14,13 @@
 
     <TextView
         android:id="@+id/textViewNameHome"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_height="100sp"
         android:layout_marginLeft="150sp"
-        android:layout_marginTop="25sp"
+        android:layout_marginTop="20sp"
+        android:layout_marginRight="20sp"
         android:padding="10sp"
-        android:text="TextView"
+        android:text="@string/textview"
         android:textColor="@color/design_default_color_secondary_variant"
         android:textSize="20sp"
         android:textStyle="bold" />
@@ -35,6 +36,8 @@
         android:layout_marginRight="20sp"
         android:padding="10sp"
         app:srcCompat="@drawable/arrow"
-        tools:ignore="VectorDrawableCompat" />
+        tools:ignore="VectorDrawableCompat"
+        android:contentDescription="@string/todo"
+        android:layout_marginEnd="20sp" />
 
 </RelativeLayout>
