@@ -2,8 +2,6 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:tools="http://schemas.android.com/tools"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="#040303">
 
     <TextView
@@ -18,16 +16,6 @@
         android:textColor="#ffffff"
         android:textSize="20sp"
         android:textStyle="bold" />
-
-    <ImageView
-        android:id="@+id/imageBack"
-        android:layout_width="50sp"
-        android:layout_height="46sp"
-        android:background="@android:color/transparent"
-        android:contentDescription="@string/back"
-        android:padding="10sp"
-        app:srcCompat="@drawable/back"
-        tools:ignore="VectorDrawableCompat" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:layout_below="@+id/textView2"

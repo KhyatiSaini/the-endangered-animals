@@ -22,14 +22,12 @@ public class FactsFragment extends Fragment implements FactsAdapter.SelectedImag
     private RecyclerView factsRecyclerView;
     private FactsAdapter factsAdapter;
     private ArrayList<FactsModel> factsList;
-    ImageView back;
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.facts_fragment, container, false);
+        final View view = inflater.inflate(R.layout.facts_fragment, container, false);
         factsRecyclerView = view.findViewById(R.id.recyclerViewFacts);
-        back = view.findViewById(R.id.imageBack);
 
         addingFacts();
         buildRecyclerViewFacts();
