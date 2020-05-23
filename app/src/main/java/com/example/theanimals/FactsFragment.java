@@ -1,0 +1,132 @@
+package com.example.theanimals;
+
+import android.os.Bundle;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.ImageView;
+
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
+import java.util.ArrayList;
+
+public class FactsFragment extends Fragment {
+
+    private RecyclerView factsRecyclerView;
+    private FactsAdapter factsAdapter;
+    private ArrayList<FactsModel> factsList;
+    ImageView back;
+
+    @Nullable
+    @Override
+    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+        View view = inflater.inflate(R.layout.facts_fragment, container, false);
+        factsRecyclerView = view.findViewById(R.id.recyclerViewFacts);
+        back = view.findViewById(R.id.imageBack);
+
+        addingFacts();
+        buildRecyclerViewFacts();
+
+        return view;
+    }
+
+    private void buildRecyclerViewFacts() {
+        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this.getActivity());
+        linearLayoutManager.setOrientation(RecyclerView.VERTICAL);
+        factsRecyclerView.setLayoutManager(linearLayoutManager);
+        factsAdapter = new FactsAdapter(factsList);
+        factsRecyclerView.setAdapter(factsAdapter);
+    }
+
+    private void addingFacts() {
+        factsList = new ArrayList<>();
+        factsList.add(new FactsModel(R.drawable.amurleopard, "Amur leopards can run at speeds of 36 mph over short distances. These leopards can leap 10 feet (3 m) vertically. Unlike other cats, leopards are strong swimmers and are one of the few cats that like water.\n" +
+                " The Amur leopard is adapted to the cool climate by having thick fur which grows up to 7.5 cm long in winter. For camouflage in the snow, their coat is paler than other leopard subspecies. The Amur leopard's rosettes are widely spaced and larger than those seen on other leopards.\n" +
+                 "Amur leopards are carnivores. They are opportunistic so are not fussy eaters, but prey consists mainly of roe and sika deer, hares, wild pigs and badgers. Although, when feeling brave, they have been known to eat young black bears."));
+        factsList.add(new FactsModel(R.drawable.asianelephant, "Asian elephants can tear down trees or pick up a blade of grass with their trunks.\n" +
+                "Elephants have the largest brain of any land mammal. In fact, of all land mammals, they have greatest volume of cerebral cortex available for cognitive processing.\n" +
+                "An elephant’s trunk has more than 40,000 muscles, more than all the muscles in a human body! Asian elephants have a gestation period of almost 22 months—the longest of any animal. Calves often nurse for two to four years."));
+        factsList.add(new FactsModel(R.drawable.blackrhinos, "Rhinoceros is a Greek word. ‘Rhino’ means ‘nose’ and ‘ceros’ means ‘horn’.\n" +
+                "Black rhinos have a ‘prehensile’, meaning hooked, lip for pulling leaves off branches.\n" +
+                "Rhinos run on their toes. That’s a lot of weight to carry!\n" +
+                "As the saying goes, rhinos do have thick skin, but they can still get sun burnt.\n" +
+                "Black rhinos are the third biggest of the five types of rhino.\n" +
+                "Black rhinos love eating plants. Up to 220 different types!"));
+        factsList.add(new FactsModel(R.drawable.bluewhale, "The Blue Whale is the largest animal ever to have lived on earth.\n" +
+                "Despite being so massive, this giant of the ocean feeds on some of the smallest marine life – tiny shrimp like animals called krill. A single adult blue whale can consume 36,000 kg of krill a day.\n" +
+                "Incredibly, Blue Whales are graceful swimmers cruise the ocean at over 8km/h, and can reach speeds of over 30km/h."));
+        factsList.add(new FactsModel(R.drawable.borneanorangutan, "Orangutans are the largest tree-dwelling animals on Earth. Though adult male gorillas climb up to the canopy to feed, they do not spend much time there and are basically terrestrial.\n" +
+                "Daytime eaters, their diet consists mostly of fruit and leaves – but they also eat nuts, bark, insects and, once in a while, bird eggs, too.\n" +
+                "These amazing apes generally have long lives – in captivity they can live for 50-60 years, and in the wild, 30-40 years."));
+        factsList.add(new FactsModel(R.drawable.crossrivergorilla, "The Cross River Gorilla is a subspecies of the Western Gorilla.\n" +
+                "There are currently only 200-300 Cross River Gorillas left in the wild, making them the most endangered great ape in Africa.\n" +
+                "They live in mountainous border area between Cameroon and Nigeria at the top of the Cross River, after which they are named."));
+        factsList.add(new FactsModel(R.drawable.giantpanda, "Pandas have carnivorous teeth, but they eat bamboo and fruit.\n" +
+                "Giant pandas are good tree climbers. They can climb trees from 7 months old, they are bears, and like other bears, they can swim.\n" +
+                "Pandas are born looking like baby badgers — fur-less, pink, and blind. The iconic black and white colour comes later, after about three weeks.\n" +
+                "Not all giant pandas are black and white! A few are brown and white, but these are very rare."));
+        factsList.add(new FactsModel(R.drawable.gorilla, "Gorillas have hands and feet like humans including opposable thumbs and big toes.\n" +
+                "Some gorillas in captivity have learned to use sign language to communicate with humans.\n" +
+                "They sleep at night in nests"));
+        factsList.add(new FactsModel(R.drawable.hawksbilturtle, "The hawksbill sea turtle frequents coral reefs.\n" +
+                "Hawksbill sea turtles are critically endangered.\n" +
+                "Hawksbill sea turtle shells change colors.\n" +
+                "Hawksbills almost exclusively eat sponges.\n" +
+                "These turtles are solitary."));
+        factsList.add(new FactsModel(R.drawable.javanrhino, "All 67 Javan rhinos have names – one of them is called Rawing!\n" +
+                "They're heavy animals, weighing up to 2.3 tonnes.\n" +
+                "They live to around 30-45 years in the wild.\n" +
+                "They're herbivorous, only eating plants.\n" +
+                "They're solitary animals, except for mating pairs and mothers with young."));
+        factsList.add(new FactsModel(R.drawable.lowlandgorilla, "The largest eastern lowland gorillas are in zoos, and they can reach more than 250 kilograms.\n" +
+                "They have a strong skeleton with a big skull compared to the size of the rest of their body, a short snout and a jawbone with teeth.\n" +
+                "Their arms are long and very developed, longer in males than in females."));
+        factsList.add(new FactsModel(R.drawable.orangutan, "Orangutans are red-haired apes that live in the tropical rainforests of Sumatra and Borneo in southeast Asia.\n" +
+                "These magnificent mammals measure 1.2m to 1.5m tall and weigh up to 100kg. ...\n" +
+                "The orangutan is one of humankind's closest relatives – in fact, we share nearly 97% of the same DNA!"));
+        factsList.add(new FactsModel(R.drawable.porpoise, "The Yangtze finless porpoise is a small mammal that can be found in the Yangtze River in China.\n" +
+                "Unlike most porpoises they don't have a fin on their back or a beak. They have a rounded head and are a dark to pale grey colour.\n" +
+                "Males reach sexual maturity at four to six years of age, and females at six to nine years. Finless porpoises have lived up to 33 years."));
+        factsList.add(new FactsModel(R.drawable.saola, "The Saola, pronounced sow-la, meaning ‘spindle horns’ in Vietnamese, is found in only one place in the world: the Annamite Mountains forests on the border between Vietnam and Laos.\n" +
+                "Saola is a large animal that looks like antelope, but it is more closely related to bovine family. It can reach 59 to 77 inches in length and weight between 176 and 220 pounds." +
+                "Both males and females have long, sharp, parallel positioned horns that can reach 20 inches in length."));
+        factsList.add(new FactsModel(R.drawable.seaotters, "Thirteen different species of otter exist all around the world. Some are small river otters, and some are bigger sea otters, 90% of all sea otters live on the coast of Alaska.\n" +
+                "They're hungry animals! Sea otters eat 25% of their body weight in food every day.\n" +
+                "Clever creatures, they'll use rocks to crack open the clams. They carry rocks and store food in the loose skin under their armpits - who needs carrier bags! "));
+        factsList.add(new FactsModel(R.drawable.siberiantiger, "Siberian or Amur tiger’s skull resembles skull of a lion except for the lower jaw which is slightly different. The biggest skull ever measured of a Siberian tiger reaches a length of 406 mm (16.0 in). The skull is from the specimen found in the northeast China.\n" +
+                "Amur tigers will travel as much as 620 miles within the country.\n" +
+                "The maximum lifespan of a captive amur tiger is estimated at 25 years."));
+        factsList.add(new FactsModel(R.drawable.snowleopard, "Snow leopards are the only big cats that call the cold deserts of Asia home. These deserts are also known as the third pole because they contain ice fields with the largest reserves of freshwater outside the northern and southern polar regions.\n" +
+                "They are often called the “ghosts of the mountain” because they are so rarely seen and spend most of their lives in solitude.\n" +
+                "They can prey on animals up to three times their own body weight."));
+        factsList.add(new FactsModel(R.drawable.sumatranelephant, "The Sumatran Elephant is the smallest subspecies, but the largest mammal existing on the island of Sumatra. They can weigh up to 5tonnes and reach 9ft in height!\n" +
+                "Adult elephants can drink 80 – 200 liters of water each day. They will eat 112 different plants species.\n" +
+                "Sumatran Elephants are the largest terrestrial animals of Indonesia. They are only found on the island of Sumatra. The skin coloration of the Sumatran Elephant is lighter than the other two subspecies of Asian Elephant. "));
+        factsList.add(new FactsModel(R.drawable.sumatranorangutan, "The Sumatran Orangutan are now found only in the dense, tropical and northern forests of the Indonesian island of Sumatra.\n" +
+                "Physically the hair of the Sumatran orangutans is paler and more ‘golden’ in colour.\n" +
+                "The cheek flanges of Sumatran males, like Puluh, grow so their faces become rounded and dish shaped and covered in small fine hairs."));
+        factsList.add(new FactsModel(R.drawable.sumatranrhino, "The remaining populations of the rare Sumatran Rhino, also known as Hairy Rhino or Asian Two-Horned Rhino, can be found in the hilly areas of tropical rain-forests on the Indonesian island of Sumatra and the Kalimantan province of Borneo.\n" +
+                "For the first time in 40 years, the Sumatran Rhino was spotted in Borneo.\n" +
+                "It is the smallest and the hairiest of the of the rhino family. Usually, their reddish-brown skin is covered in patches of short, dark coarse hair with longer, thicker hair around their ears and tail.\n"));
+        factsList.add(new FactsModel(R.drawable.sumatrantiger, "These beautiful tigers grow up to 2.5 metres long, making them the smallest subspecies of tiger in the world.\n" +
+                "Sumatran tigers are different from other tigers in that they have thinner stripes and larger manes.\n" +
+                "They are excellent hunters and mainly catch deer, wild pigs, cattle and goats."));
+        factsList.add(new FactsModel(R.drawable.tasmaniandevil, "The Tasmanian devil is the largest surviving carnivorous marsupial. It has a squat, thick build, with a large head and a tail which is about half its body length." +
+                "Unusually for a marsupial, its forelegs are slightly longer than its hind legs, and devils can run up to 13 km/h (8.1 mph) for short distances." +
+                "devils are not dangerous. They do not attack people, although they will defend themselves if they're attacked or trapped. Devils may look fierce but they will much rather escape than fight. However, devils have powerful jaws and when they do bite, they can cause serious injury."));
+        factsList.add(new FactsModel(R.drawable.vaquita, "The vaquita, Phocoena sinus, is the world's smallest cetacean, weighing around 55 kilos.\n" +
+                "Females grow to be around 1.5 metres long.\n" +
+                "They eat small fish and squid.\n" +
+                "They have unique facial markings with a black ring around each eye and curved, black lips that make them look as if they are smiling."));
+        factsList.add(new FactsModel(R.drawable.westrenlowlandgorilla, "Western lowland gorillas are the smallest gorillas. Males are considerably larger than females. An adult male weighs between 136 and 227 kg (300 to 500 lbs) and stands up to 1.8 m (6 ft) tall. Females weigh between 68 and 90 kg (150 to 200 lb) and stand around 1.4 m (4.5 ft) tall.\n" +
+                "Relatively small gorilla with dark brownish black hair and large skull. Mature males have white hair on their backs.\n" +
+                "Western lowland gorillas are herbivores. They preferentially select fruit that is high in sugar and fiber. However, when fruit is scarce, they eat leaves, shoots, herbs, and bark. An adult gorilla eats about 18 kg (40 lb) of food per day."));
+        factsList.add(new FactsModel(R.drawable.whoopingcranes, "The Whooping Crane is the tallest bird in North America and the rarest crane species.\n" +
+                "Adult Whooping Cranes are identified by a red skin patch on their forehead, black “mustache” and legs, and black wing tips visible in flight.\n" +
+                "The whooping crane (Grus americana) is the tallest bird in North America, they are named for their whooping unison calls."));
+    }
+}

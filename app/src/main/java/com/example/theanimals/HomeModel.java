@@ -1,11 +1,11 @@
 package com.example.theanimals;
 
-public class Home_Model {
+public class HomeModel {
     private int animalImageResource;
     private String nameOfAnimal;
     private int nextImageView;
 
-    public Home_Model(int animalImageResource, String nameOfAnimal, int nextImageView) {
+    public HomeModel(int animalImageResource, String nameOfAnimal, int nextImageView) {
         this.animalImageResource = animalImageResource;
         this.nameOfAnimal = nameOfAnimal;
         this.nextImageView = nextImageView;

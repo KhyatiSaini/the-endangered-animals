@@ -63,13 +63,13 @@ public class HomeActivity extends AppCompatActivity implements Adapter.SelectedA
                     switch (item.getItemId())
                     {
                         case R.id.nav_home:
-                            selectedFragment = new Home_Fragment();
+                            selectedFragment = new HomeFragment();
                             break;
                         case R.id.nav_facts:
-                            selectedFragment = new Facts_Fragment();
+                            selectedFragment = new FactsFragment();
                             break;
                         case R.id.nav_stats:
-                            selectedFragment = new Statistics_Fragment();
+                            selectedFragment = new StatisticsFragment();
                             break;
                     }
                     getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, selectedFragment).commit();

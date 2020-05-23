@@ -56,7 +56,7 @@
 
         <TextView
             android:id="@+id/textViewInfo"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@+id/imageViewHome"
             android:layout_marginTop="20sp"
@@ -70,7 +70,7 @@
 
         <TextView
             android:id="@+id/textViewStatus"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@+id/textViewInfo"
             android:layout_marginLeft="20sp"
@@ -84,7 +84,7 @@
 
         <TextView
             android:id="@+id/textViewWhyTheyMatter"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@+id/textViewStatus"
             android:layout_marginTop="20sp"
@@ -98,7 +98,7 @@
 
         <TextView
             android:id="@+id/textViewEfforts"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@+id/textViewWhyTheyMatter"
             android:layout_margin="20sp"

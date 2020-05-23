@@ -17,11 +17,11 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
 
-public class Home_Fragment extends Fragment implements Home_Adapter.SelectedAnimalHome{
+public class HomeFragment extends Fragment implements HomeAdapter.SelectedAnimalHome{
 
     private RecyclerView homeRecyclerView;
-    private Home_Adapter homeAdapter;
-    private ArrayList<Home_Model> list;
+    private HomeAdapter homeAdapter;
+    private ArrayList<HomeModel> list;
     ImageView back;
 
     @Nullable
@@ -49,33 +49,33 @@ public class Home_Fragment extends Fragment implements Home_Adapter.SelectedAnim
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this.getActivity());
         linearLayoutManager.setOrientation(RecyclerView.VERTICAL);
         homeRecyclerView.setLayoutManager(linearLayoutManager);
-        homeAdapter = new Home_Adapter(list, getContext(), this);
+        homeAdapter = new HomeAdapter(list, getContext(), this);
         homeRecyclerView.setAdapter(homeAdapter);
     }
 
     private void addingDataHome() {
         list = new ArrayList<>();
-        list.add(new Home_Model(R.drawable.amurleopard,"Amur Leopard",R.drawable.arrow));
-        list.add(new Home_Model(R.drawable.blackrhinos,"Black Rhino",R.drawable.arrow));
-        list.add(new Home_Model(R.drawable.orangutan,"Bornean Orangutan",R.drawable.arrow));
-        list.add(new Home_Model(R.drawable.crossrivergorilla,"Cross River Gorilla",R.drawable.arrow));
-        list.add(new Home_Model(R.drawable.lowlandgorilla,"Eastern Lowland Gorilla",R.drawable.arrow));
-        list.add(new Home_Model(R.drawable.hawksbilturtle,"Hawksbill Turtle",R.drawable.arrow));
-        list.add(new Home_Model(R.drawable.javanrhino,"Javan Rhino",R.drawable.arrow));
-        list.add(new Home_Model(R.drawable.orangutan,"Orangutan",R.drawable.arrow));
-        list.add(new Home_Model(R.drawable.saola,"Saola",R.drawable.arrow));
-        list.add(new Home_Model(R.drawable.sumatranelephant,"Sumatran Elephant",R.drawable.arrow));
-        list.add(new Home_Model(R.drawable.sumatranorangutan,"Sumatran Orangutan",R.drawable.arrow));
-        list.add(new Home_Model(R.drawable.sumatranrhino,"Sumatran Rhino",R.drawable.arrow));
-        list.add(new Home_Model(R.drawable.siberiantiger,"Sunda Tiger",R.drawable.arrow));
-        list.add(new Home_Model(R.drawable.vaquita,"Vaquita",R.drawable.arrow));
-        list.add(new Home_Model(R.drawable.westrenlowlandgorilla,"Western Lowland Gorilla",R.drawable.arrow));
-        list.add(new Home_Model(R.drawable.porpoise,"Yangtze Finless Porpoise",R.drawable.arrow));
+        list.add(new HomeModel(R.drawable.amurleopard,"Amur Leopard",R.drawable.arrow));
+        list.add(new HomeModel(R.drawable.blackrhinos,"Black Rhino",R.drawable.arrow));
+        list.add(new HomeModel(R.drawable.orangutan,"Bornean Orangutan",R.drawable.arrow));
+        list.add(new HomeModel(R.drawable.crossrivergorilla,"Cross River Gorilla",R.drawable.arrow));
+        list.add(new HomeModel(R.drawable.lowlandgorilla,"Eastern Lowland Gorilla",R.drawable.arrow));
+        list.add(new HomeModel(R.drawable.hawksbilturtle,"Hawksbill Turtle",R.drawable.arrow));
+        list.add(new HomeModel(R.drawable.javanrhino,"Javan Rhino",R.drawable.arrow));
+        list.add(new HomeModel(R.drawable.orangutan,"Orangutan",R.drawable.arrow));
+        list.add(new HomeModel(R.drawable.saola,"Saola",R.drawable.arrow));
+        list.add(new HomeModel(R.drawable.sumatranelephant,"Sumatran Elephant",R.drawable.arrow));
+        list.add(new HomeModel(R.drawable.sumatranorangutan,"Sumatran Orangutan",R.drawable.arrow));
+        list.add(new HomeModel(R.drawable.sumatranrhino,"Sumatran Rhino",R.drawable.arrow));
+        list.add(new HomeModel(R.drawable.siberiantiger,"Sunda Tiger",R.drawable.arrow));
+        list.add(new HomeModel(R.drawable.vaquita,"Vaquita",R.drawable.arrow));
+        list.add(new HomeModel(R.drawable.westrenlowlandgorilla,"Western Lowland Gorilla",R.drawable.arrow));
+        list.add(new HomeModel(R.drawable.porpoise,"Yangtze Finless Porpoise",R.drawable.arrow));
     }
 
 
     @Override
-    public void selectedAnimalHome(Home_Model homeModel, Context context, int position) {
+    public void selectedAnimalHome(HomeModel homeModel, Context context, int position) {
         Intent intent = new Intent(getContext(), InfoActivity.class);
         intent.putExtra("ImageURL", homeModel.getAnimalImageResource());
         intent.putExtra("AnimalName", homeModel.getNameOfAnimal());
