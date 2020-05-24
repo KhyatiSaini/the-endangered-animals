@@ -11,6 +11,9 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.SearchView;
+
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import java.util.ArrayList;
 public class HomeActivity extends AppCompatActivity implements Adapter.SelectedAnimal, Adapter.ImageSelected {
@@ -19,6 +22,7 @@ public class HomeActivity extends AppCompatActivity implements Adapter.SelectedA
     private RecyclerView recyclerView;
     private Adapter adapter;
     private ArrayList<Model> list;
+    SearchView searchView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,7 +34,14 @@ public class HomeActivity extends AppCompatActivity implements Adapter.SelectedA
 
         bottomNavigationView = findViewById(R.id.bottom_nav);
         bottomNavigationView.setOnNavigationItemSelectedListener(selectedListener);
+        searchView = findViewById(R.id.search);
+
+//        searchAction();
     }
+
+//    private void searchAction() {
+//
+//    }
 
     private void buildRecyclerView() {
         recyclerView = findViewById(R.id.recycler_view);

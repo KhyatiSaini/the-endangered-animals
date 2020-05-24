@@ -16,12 +16,12 @@
             android:id="@+id/textViewHeading"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="10 of the Most Endangered Species"
+            android:text="10 of the Most Endangered Animals"
             android:background="@color/design_default_color_error"
             android:textAlignment="center"
             android:paddingTop="15sp"
             android:paddingBottom="15sp"
-            android:textSize="20sp"
+            android:textSize="15sp"
             android:textStyle="bold"
             android:textColor="#ffffff"
             android:layout_gravity="center_horizontal" />
@@ -30,7 +30,13 @@
             android:id="@+id/recycler_view"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_marginTop="55sp" />
+            android:layout_marginTop="50sp" />
+
+        <SearchView
+            android:id="@+id/search"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:searchIcon="@drawable/search" />
 
     </FrameLayout>
 

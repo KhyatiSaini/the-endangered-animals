@@ -15,6 +15,7 @@ import java.util.List;
 public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder> {
 
     private static List<Model> modelList;
+    private static List<Model> modelListFiltered;
     private static Context context;
     private static SelectedAnimal selected;
     private static ImageSelected imageSelected;
@@ -24,6 +25,7 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder> {
         this.context = context;
         this.selected = selected;
         this.imageSelected = imageSelected;
+        this.modelListFiltered = modelList;
     }
 
     @NonNull
