@@ -2,16 +2,25 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#ADE687">
+    android:background="#ffffff">
 
     <TextView
-        android:id="@+id/textView"
-        android:layout_centerInParent="true"
-        android:textSize="20sp"
-        android:textColor="#ffffff"
-        android:textStyle="bold"
-        android:layout_width="wrap_content"
+        android:id="@+id/textView2"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/statistics_fragment" />
+        android:layout_gravity="center_horizontal"
+        android:background="@color/design_default_color_error"
+        android:padding="10sp"
+        android:text="Population"
+        android:textAlignment="center"
+        android:textColor="#ffffff"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_below="@+id/textView2"
+        android:id="@+id/recyclerViewStat"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
 
 </RelativeLayout>

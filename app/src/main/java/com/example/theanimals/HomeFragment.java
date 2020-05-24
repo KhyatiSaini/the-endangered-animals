@@ -17,8 +17,6 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
 
-import javax.security.auth.login.LoginException;
-
 public class HomeFragment extends Fragment implements HomeAdapter.SelectedAnimalHome, HomeAdapter.ImageSelectedHome{
 
     private RecyclerView homeRecyclerView;
