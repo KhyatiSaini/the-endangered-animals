@@ -32,12 +32,6 @@
             android:layout_height="match_parent"
             android:layout_marginTop="50sp" />
 
-        <SearchView
-            android:id="@+id/search"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:searchIcon="@drawable/search" />
-
     </FrameLayout>
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
