@@ -21,7 +21,7 @@
             android:textAlignment="center"
             android:paddingTop="15sp"
             android:paddingBottom="15sp"
-            android:textSize="15sp"
+            android:textSize="20sp"
             android:textStyle="bold"
             android:textColor="#ffffff"
             android:layout_gravity="center_horizontal" />
@@ -30,7 +30,7 @@
             android:id="@+id/recycler_view"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_marginTop="50sp" />
+            android:layout_marginTop="55sp" />
 
     </FrameLayout>
 
