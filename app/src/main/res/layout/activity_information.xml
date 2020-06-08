@@ -72,4 +72,16 @@
         android:contentDescription="@string/todo"
         android:layout_marginStart="20sp" />
 
+    <ImageButton
+        android:id="@+id/imageButtonSpeech"
+        android:layout_width="52dp"
+        android:layout_height="46dp"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="20sp"
+        android:layout_marginRight="22dp"
+        android:background="@android:color/transparent"
+        android:contentDescription="@string/todo"
+        app:srcCompat="@drawable/speech"
+        tools:ignore="VectorDrawableCompat" />
+
 </RelativeLayout>
