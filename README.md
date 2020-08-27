@@ -28,7 +28,7 @@ dependencies {
 <img src = "screenshots/IMG_20200525_160141.jpg" width = "45%" height = "80%">
 </p></br>
 
-<img src = "screenshots/IMG_20200525_225320.jpg" width = "33%" height = "55%">  <img src = "screenshots/IMG_20200525_225337.jpg" width = "33%" height = "90%">  <img src = "screenshots/IMG_20200525_145110.jpg" width = "33%" height = "80%"></br></br>
+<img src = "screenshots/IMG_20200525_225320.jpg" width = "32%" height = "55%">  <img src = "screenshots/IMG_20200525_225337.jpg" width = "32%" height = "90%">  <img src = "screenshots/IMG_20200525_145110.jpg" width = "32%" height = "80%"></br></br>
 
 ## Implementation of zoomable Android Image View 
 *PhotoView aims to help produce an easily usable implementation of a zooming Android ImageView.*</br>
